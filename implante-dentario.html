@@ -24,7 +24,7 @@
     @media (max-width: 640px) {
       .hero-copy { max-width: 60%; }
       #hero { background-position: 0% 0%, calc(35% - 200px) center !important; }
-      #cta-1 { background-position: 0% 0%, calc(25% - 230px) center !important; }
+      #cta-1 { background-position: 0% 0%, calc(25% - 390px) center !important; }
       .cta1-copy { max-width: 60%; }
       .cta1-title { font-size: 22px; }
       .cta2-copy { width: 60%; max-width: 60%; min-width: 0; text-align: right; box-sizing: border-box; overflow-wrap: break-word; }
@@ -46,8 +46,12 @@
     .treatments-section::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0) 36%, rgba(255,255,255,0.45) 100%); pointer-events: none; }
     .treatments-shell { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.45fr); gap: 42px; align-items: stretch; }
     .treatments-copy { display: flex; flex-direction: column; justify-content: space-between; gap: 28px; }
+    .treatments-cta { margin-top: auto; }
     .treatments-kicker { display: inline-flex; align-items: center; gap: 9px; width: fit-content; color: #1F8A82; background: #E8F2EF; border: 1px solid #D4E6E2; border-radius: 999px; padding: 8px 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
     .treatments-kicker span { width: 7px; height: 7px; border-radius: 50%; background: #E8B93E; box-shadow: 0 0 0 5px rgba(232,185,62,0.18); }
+    .whatsapp-animated { animation: whatsappCtaPulse 1.8s ease-in-out infinite; transition: transform .2s ease, box-shadow .2s ease; }
+    .whatsapp-animated:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 18px 38px rgba(153,192,60,0.34) !important; }
+    @keyframes whatsappCtaPulse { 0%,100% { transform: scale(1); box-shadow: 0 14px 30px rgba(153,192,60,0.24); } 50% { transform: scale(1.04); box-shadow: 0 20px 42px rgba(153,192,60,0.38); } }
     .treatments-panel { position: relative; overflow: hidden; background: #0F3B38; border-radius: 8px; padding: 28px; color: #fff; box-shadow: 0 24px 55px rgba(15,59,56,0.18); }
     .treatments-panel::before { content: ''; position: absolute; inset: auto -52px -70px auto; width: 190px; height: 190px; border-radius: 50%; border: 34px solid rgba(255,255,255,0.08); }
     .treatments-panel-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 22px; }
@@ -57,6 +61,23 @@
     .treatment-card:hover { transform: translateY(-5px); box-shadow: 0 22px 48px rgba(15,59,56,0.13); border-color: color-mix(in srgb, var(--accent) 42%, #E7ECE9); }
     .treatment-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
     .treatment-meta span { display: inline-flex; align-items: center; min-height: 30px; border-radius: 999px; padding: 6px 10px; background: color-mix(in srgb, var(--accent) 10%, #FFFFFF); color: #2f4744; font-size: 12px; font-weight: 600; }
+    .story-cta-section { position: relative; overflow: hidden; background: linear-gradient(135deg, #08201E 0%, #0F3B38 62%, #071A18 100%); padding: 90px 24px; color: #fff; }
+    .story-cta-section::before { content: ''; position: absolute; inset: -110px auto auto -120px; width: 360px; height: 360px; background: url('assets/elementos.png') center/contain no-repeat; opacity: .11; transform: rotate(-18deg); pointer-events: none; }
+    .story-cta-shell { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: minmax(280px, .9fr) minmax(260px, .72fr); gap: 54px; align-items: center; }
+    .story-cta-copy { max-width: 560px; }
+    .story-cta-video { position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 4 / 5; background: #071A18; box-shadow: 0 28px 70px rgba(0,0,0,0.32); border: 1px solid rgba(255,255,255,0.12); }
+    .story-cta-video video { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .story-cta-cover { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; padding: 0; cursor: pointer; background: url('assets/capa2.jpg') center/cover no-repeat; }
+    .story-cta-cover::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,28,26,0.02), rgba(8,28,26,0.22)); }
+    .story-cta-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 78px; height: 78px; border-radius: 50%; background: #009E96; display: flex; align-items: center; justify-content: center; box-shadow: 0 18px 42px rgba(0,0,0,0.28), 0 0 0 12px rgba(255,255,255,0.16); z-index: 2; }
+    .story-cta-play span { width: 0; height: 0; border-top: 14px solid transparent; border-bottom: 14px solid transparent; border-left: 22px solid #fff; margin-left: 5px; }
+    .patient-cta-section { position: relative; overflow: hidden; background: linear-gradient(135deg, #08201E 0%, #0F3B38 62%, #071A18 100%); padding: 90px 24px; color: #fff; }
+    .patient-cta-section::before { content: ''; position: absolute; left: -140px; bottom: -170px; width: 400px; height: 400px; background: url('assets/elementos.png') center/contain no-repeat; opacity: .11; transform: rotate(-15deg); pointer-events: none; }
+    .patient-cta-shell { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: minmax(260px, .72fr) minmax(280px, .9fr); gap: 54px; align-items: center; }
+    .patient-cta-video { position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 4 / 5; background: #0F3B38; box-shadow: 0 24px 55px rgba(15,59,56,0.18); border: 1px solid rgba(207,224,220,0.85); }
+    .patient-cta-video video { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .patient-cta-cover { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; padding: 0; cursor: pointer; background: url('assets/capa1.jpg') center/cover no-repeat; }
+    .patient-cta-cover::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,28,26,0.02), rgba(8,28,26,0.22)); }
     .authority-section { position: relative; overflow: hidden; background: linear-gradient(135deg, #0A2C29 0%, #0F3B38 58%, #071F1D 100%); padding: 92px 24px; color: #fff; }
     .authority-section::before { content: ''; position: absolute; inset: 0; background: url('assets/elementos.png') right -80px top -120px/560px auto no-repeat; opacity: .11; pointer-events: none; }
     .authority-section::after { content: ''; position: absolute; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(206,22,122,0.22), transparent 64%); left: -170px; bottom: -210px; pointer-events: none; }
@@ -64,6 +85,7 @@
     .authority-kicker { display: inline-flex; align-items: center; gap: 9px; width: fit-content; color: #DFF0C5; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 8px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
     .authority-kicker span { width: 7px; height: 7px; border-radius: 50%; background: #CE167A; box-shadow: 0 0 0 5px rgba(206,22,122,0.18); }
     .authority-copy { display: grid; gap: 18px; }
+    .authority-cta { margin-top: 8px; }
     .authority-highlight { color: #fff; background: #CE167A; border-radius: 8px; padding: 0 8px 3px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
     .authority-proof { display: grid; gap: 16px; }
     .authority-item { position: relative; overflow: hidden; display: grid; grid-template-columns: 96px minmax(0,1fr); gap: 22px; align-items: center; padding: 24px 26px; background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); border-radius: 8px; box-shadow: 0 18px 42px rgba(0,0,0,0.16); backdrop-filter: blur(10px); }
@@ -87,14 +109,21 @@
     .video-play span { width: 0; height: 0; border-top: 13px solid transparent; border-bottom: 13px solid transparent; border-left: 20px solid #fff; margin-left: 5px; }
     .video-testimonials-cta { display: flex; justify-content: center; margin-top: 32px; }
     .video-testimonials-cta a { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; background: #99C03C; color: #0F3B38; text-decoration: none; border-radius: 6px; font-size: 16px; font-weight: 800; padding: 0 28px; box-shadow: 0 14px 30px rgba(153,192,60,0.24); }
+    .testimonial-cta-shell { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: minmax(280px, .9fr) minmax(260px, .72fr); gap: 54px; align-items: center; }
+    .testimonial-cta-copy { max-width: 570px; }
+    .testimonial-cta-video { position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 4 / 5; background: #0F3B38; box-shadow: 0 24px 55px rgba(15,59,56,0.18); border: 1px solid rgba(207,224,220,0.85); }
+    .testimonial-cta-video video { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .testimonial-cta-cover { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; padding: 0; cursor: pointer; background: url('assets/capa3.jpg') center/cover no-repeat; }
+    .testimonial-cta-cover::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,28,26,0.02), rgba(8,28,26,0.22)); }
     .steps-section { position: relative; overflow: hidden; background: linear-gradient(135deg, #F7F5F1 0%, #FFFFFF 50%, #EEF5F3 100%); padding: 76px 24px; color: #16302E; }
     .steps-section::before { content: ''; position: absolute; width: 420px; height: 420px; border-radius: 50%; background: rgba(153,192,60,0.11); left: -190px; top: -220px; }
     .steps-section::after { content: ''; position: absolute; width: 360px; height: 360px; border-radius: 50%; background: rgba(31,138,130,0.08); right: -170px; bottom: -190px; }
-    .steps-shell { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: minmax(250px, 0.58fr) minmax(0, 1.42fr); gap: 34px; align-items: start; }
-    .steps-header { position: sticky; top: 24px; }
+    .steps-shell { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: minmax(250px, 0.58fr) minmax(0, 1.42fr); gap: 34px; align-items: stretch; }
+    .steps-header { position: sticky; top: 24px; display: flex; flex-direction: column; min-height: 100%; }
     .steps-kicker { display: inline-flex; align-items: center; gap: 9px; width: fit-content; color: #1F8A82; background: #E8F2EF; border: 1px solid #D4E6E2; border-radius: 999px; padding: 8px 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
     .steps-kicker span { width: 7px; height: 7px; border-radius: 50%; background: #99C03C; box-shadow: 0 0 0 5px rgba(153,192,60,0.18); }
     .steps-summary { margin-top: 26px; border-left: 4px solid #99C03C; padding: 16px 0 16px 18px; color: #4d625f; font-size: 14px; line-height: 1.6; }
+    .steps-cta { margin-top: auto; padding-top: 30px; }
     .steps-flow { position: relative; display: grid; gap: 0; padding: 8px 0; }
     .steps-flow::before { content: ''; position: absolute; top: 12px; bottom: 12px; left: 50%; width: 2px; transform: translateX(-50%); background: linear-gradient(#99C03C,#E8B93E,#1F8A82); opacity: .78; }
     .step-row { position: relative; min-height: 70px; padding: 2px 0; }
@@ -139,21 +168,42 @@
     .faq-answer { padding: 0 22px 22px; font-size: 14.5px; line-height: 1.65; color: #5a6a68; margin: 0; }
     @media (max-width: 900px) {
       .treatments-section { padding: 72px 20px; }
-      .treatments-shell { grid-template-columns: 1fr; gap: 28px; }
-      .treatments-copy { display: block; }
+      .treatments-shell { display: flex; flex-direction: column; gap: 28px; }
+      .treatments-copy { display: contents; }
+      .treatments-copy > div:first-child { order: 1; }
+      .treatments-grid { order: 2; }
+      .treatments-cta { order: 3; margin-top: 4px; }
       .treatments-panel { margin-top: 26px; }
+      .story-cta-section { padding: 72px 20px; }
+      .story-cta-shell { grid-template-columns: 1fr; gap: 30px; }
+      .story-cta-copy { order: 2; }
+      .story-cta-video { max-width: 460px; width: 100%; margin: 0 auto; order: 1; }
+      .patient-cta-section { padding: 72px 20px; }
+      .patient-cta-shell { grid-template-columns: 1fr; gap: 30px; }
+      .patient-cta-shell > div:last-child { order: 2; }
+      .patient-cta-video { max-width: 460px; width: 100%; margin: 0 auto; order: 1; }
       .authority-section { padding: 72px 20px; }
-      .authority-shell { grid-template-columns: 1fr; gap: 32px; }
+      .authority-shell { display: flex; flex-direction: column; gap: 32px; }
+      .authority-copy { display: contents; }
+      .authority-copy > .authority-kicker, .authority-copy > h2, .authority-copy > p, .authority-copy > div:not(.authority-cta) { order: 1; }
+      .authority-proof { order: 2; }
+      .authority-cta { order: 3; margin-top: 0; }
       .authority-item:nth-child(2), .authority-item:nth-child(3) { margin-left: 0; }
       .video-testimonials-section { padding: 72px 20px; }
       .video-testimonials-head { grid-template-columns: 1fr; gap: 20px; }
       .video-testimonials-grid { grid-template-columns: 1fr; }
+      .testimonial-cta-shell { grid-template-columns: 1fr; gap: 30px; }
+      .testimonial-cta-copy { order: 2; }
+      .testimonial-cta-video { max-width: 460px; width: 100%; margin: 0 auto; order: 1; }
       .units-section { padding: 72px 20px; }
       .units-grid { grid-template-columns: 1fr; }
       .steps-section { padding: 68px 20px; }
-      .steps-shell { grid-template-columns: 1fr; gap: 26px; }
-      .steps-header { position: relative; top: auto; }
+      .steps-shell { display: flex; flex-direction: column; gap: 26px; }
+      .steps-header { display: contents; position: relative; top: auto; min-height: auto; }
       .steps-summary { margin-top: 20px; max-width: 520px; }
+      .steps-header > .steps-kicker, .steps-header > h2, .steps-header > p, .steps-header > .steps-summary { order: 1; }
+      .steps-flow { order: 2; }
+      .steps-cta { order: 3; margin-top: 4px; padding-top: 0; }
       .steps-flow::before { left: 24px; }
       .step-row { display: grid; grid-template-columns: 48px minmax(0,1fr); gap: 16px; min-height: auto; padding: 6px 0; }
       .step-row::before, .step-row.is-right::before { left: 24px; width: 22px; transform: translate(0, -50%); }
@@ -199,7 +249,7 @@
         <img data-reveal="heroLogo" style="{{ heroLogoStyle }}" src="assets/logo-hoe.webp" alt="HOE - Hospital de Odontologia Especializada" width="180" height="72" />
         <h1 data-reveal="heroTitle" style="{{ heroTitleStyle }}">Recupere seus dentes e volte a sorrir, sem sentir nada durante o procedimento.</h1>
         <p data-reveal="heroSub" style="{{ heroSubStyle }}">Mais de 20 mil sorrisos restaurados em 10+ anos, com a segurança de um hospital odontológico: centro cirúrgico próprio, sedação consciente e anestesista dedicado.</p>
-        <a data-reveal="heroBtn" style="{{ heroBtnStyle }}" href="{{ whatsappLink }}" target="_blank" rel="noopener">Agende sua avaliação</a>
+        <a class="whatsapp-animated" data-reveal="heroBtn" style="{{ heroBtnStyle }}" href="{{ whatsappLink }}" target="_blank" rel="noopener">Clique aqui e transforme seu sorriso</a>
       </div>
     </div>
   </header>
@@ -256,19 +306,9 @@
           <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,46px); line-height:1.08; font-weight:700; color:#0F3B38; margin:24px 0 18px;">Tipos de tratamento</h2>
           <p style="color:#4d625f; font-size:17px; line-height:1.7; max-width:420px; margin:0;">Cada sorriso exige uma abordagem própria. Conheça as frentes de tratamento oferecidas pelo HOE com tecnologia, cuidado cirúrgico e reabilitação personalizada.</p>
         </div>
-        <div class="treatments-panel">
-          <p style="position:relative; font-size:13px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8B93E; margin:0 0 10px;">Jornada completa</p>
-          <h3 style="position:relative; font-size:22px; line-height:1.25; font-weight:600; margin:0; color:#fff;">Da avaliação à prótese final, tudo é definido a partir do seu diagnóstico.</h3>
-          <div class="treatments-panel-grid">
-            <div class="treatments-panel-stat">
-              <strong style="display:block; font-size:25px; color:#fff; margin-bottom:4px;">Scan</strong>
-              <span style="font-size:13px; line-height:1.45; color:#cfe0dc;">tecnologia aplicada</span>
-            </div>
-            <div class="treatments-panel-stat">
-              <strong style="display:block; font-size:25px; color:#fff; margin-bottom:4px;">1:1</strong>
-              <span style="font-size:13px; line-height:1.45; color:#cfe0dc;">conduta individualizada</span>
-            </div>
-          </div>
+        <div class="treatments-cta">
+          <p style="color:#0F3B38; font-size:clamp(24px,3vw,32px); line-height:1.12; font-weight:800; margin:0 0 16px;">Faça seu implante agora!</p>
+          <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Clique aqui para agendar</a>
         </div>
       </div>
       <div class="treatments-grid">
@@ -289,6 +329,28 @@
       </div>
     </div>
   </section>
+  <!-- CTA DEPOIMENTO -->
+  <section class="story-cta-section">
+    <div class="story-cta-shell">
+      <div class="story-cta-copy">
+        <div style="display:inline-flex; align-items:center; gap:9px; color:#DFF0C5; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16); border-radius:999px; padding:8px 12px; font-size:12px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; margin:0 0 20px;"><span style="width:7px; height:7px; border-radius:50%; background:#99C03C; box-shadow:0 0 0 5px rgba(153,192,60,0.18);"></span>História real</div>
+        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,48px); line-height:1.06; font-weight:800; color:#fff; margin:0 0 18px;">O implante pode devolver mais do que dentes: pode devolver confian&ccedil;a.</h2>
+        <p style="color:#D7E5E1; font-size:17px; line-height:1.75; max-width:540px; margin:0 0 18px;">Assista ao depoimento e veja como um tratamento bem planejado transforma mastiga&ccedil;&atilde;o, sorriso e rotina.</p>
+        <p style="color:#fff; font-size:20px; line-height:1.35; font-weight:700; max-width:520px; margin:0 0 24px;">Se voc&ecirc; tamb&eacute;m quer voltar a sorrir com seguran&ccedil;a, fale agora com nossa equipe.</p>
+        <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Quero transformar meu sorriso</a>
+      </div>
+      <div class="story-cta-video">
+        <sc-if value="{{ !storyVideoOpen }}" hint-placeholder-val="{{ true }}">
+          <button class="story-cta-cover" onClick="{{ playStoryVideo }}" aria-label="Reproduzir depoimento">
+            <span class="story-cta-play"><span></span></span>
+          </button>
+        </sc-if>
+        <sc-if value="{{ storyVideoOpen }}" hint-placeholder-val="{{ false }}">
+          <video src="assets/paciente2.mp4" controls autoplay playsinline></video>
+        </sc-if>
+      </div>
+    </div>
+  </section>
   <!-- ETAPAS -->
   <section id="etapas" class="steps-section">
     <div class="steps-shell">
@@ -299,6 +361,10 @@
         <div class="steps-summary">
           <strong style="display:block; color:#0F3B38; font-size:20px; line-height:1.2; margin-bottom:6px;">7 fases conectadas</strong>
           <span>Do diagn&oacute;stico inicial &agrave; manuten&ccedil;&atilde;o do resultado, cada decis&atilde;o segue um plano individual.</span>
+        </div>
+        <div class="steps-cta">
+          <p style="color:#0F3B38; font-size:clamp(24px,3vw,30px); line-height:1.12; font-weight:800; margin:0 0 16px;">Quer saber mais?</p>
+          <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Fale com nossa equipe</a>
         </div>
       </div>
       <div class="steps-flow">
@@ -316,13 +382,25 @@
       </div>
     </div>
   </section>
-  <!-- CTA 1 -->
-  <section id="cta-1" style="background:linear-gradient(90deg, rgba(8,28,26,0.92) 0%, rgba(8,28,26,0.78) 44%, rgba(8,28,26,0.28) 100%), url('assets/proteses-dentarias-hoe-site-1.png') 25% center/cover no-repeat fixed; padding:148px 24px; text-align:left; box-shadow:inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -80px 120px rgba(8,28,26,0.2);">
-    <div data-reveal="cta1" style="{{ cta1Style }}">
-      <div class="cta1-copy">
-        <h2 class="cta1-title" style="font-family:'Work Sans',sans-serif; line-height:1.22; font-weight:700; color:#fff; max-width:780px; margin:0 0 16px;">D&ecirc; o primeiro passo para <span style="display:inline; background:#CE167A; color:#fff; padding:0 8px 3px; border-radius:8px; box-decoration-break:clone; -webkit-box-decoration-break:clone;">recuperar sua mastiga&ccedil;&atilde;o</span> e <span style="display:inline; background:#CE167A; color:#fff; padding:0 8px 3px; border-radius:8px; box-decoration-break:clone; -webkit-box-decoration-break:clone;">autoestima</span>.</h2>
-        <p style="color:#dce9e6; font-size:17px; line-height:1.65; max-width:560px; margin:0 0 28px;">Fale agora com nossa equipe e agende sua avalia&ccedil;&atilde;o.</p>
-        <a style="display:inline-block; background:#99C03C; color:#0F3B38; text-decoration:none; padding:14px 28px; border-radius:4px; font-size:16px; font-weight:700;" href="{{ whatsappLink }}" target="_blank" rel="noopener">Falar no WhatsApp</a>
+  <!-- CTA DEPOIMENTO 2 -->
+  <section id="cta-1" class="patient-cta-section">
+    <div class="patient-cta-shell" data-reveal="cta1" style="{{ cta1Style }}">
+      <div class="patient-cta-video">
+        <sc-if value="{{ !ctaVideoOpen }}" hint-placeholder-val="{{ true }}">
+          <button class="patient-cta-cover" onClick="{{ playCtaVideo }}" aria-label="Reproduzir depoimento">
+            <span class="story-cta-play"><span></span></span>
+          </button>
+        </sc-if>
+        <sc-if value="{{ ctaVideoOpen }}" hint-placeholder-val="{{ false }}">
+          <video src="assets/paciente1.mp4" controls autoplay playsinline></video>
+        </sc-if>
+      </div>
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:9px; color:#DFF0C5; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16); border-radius:999px; padding:8px 12px; font-size:12px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; margin:0 0 20px;"><span style="width:7px; height:7px; border-radius:50%; background:#99C03C; box-shadow:0 0 0 5px rgba(153,192,60,0.18);"></span>Depoimento real</div>
+        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,46px); line-height:1.08; font-weight:800; color:#fff; margin:0 0 18px;">Seu novo sorriso pode come&ccedil;ar com uma conversa.</h2>
+        <p style="color:#D7E5E1; font-size:17px; line-height:1.75; max-width:540px; margin:0 0 18px;">Veja como o implante dent&aacute;rio ajudou a recuperar seguran&ccedil;a, conforto e vontade de sorrir sem medo.</p>
+        <p style="color:#fff; font-size:20px; line-height:1.35; font-weight:800; max-width:520px; margin:0 0 24px;">Agende sua avalia&ccedil;&atilde;o e descubra o plano ideal para o seu caso.</p>
+        <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Quero agendar minha avalia&ccedil;&atilde;o</a>
       </div>
     </div>
   </section>
@@ -337,7 +415,11 @@
           <p style="margin:0;">O <strong style="color:#0F3B38;">HOE — Hospital de Odontologia Especializada</strong> nasceu para levar à odontologia o mesmo padrão de <u style="text-decoration-color:#99C03C; text-decoration-thickness:3px; text-underline-offset:4px;">rigor técnico</u>, planejamento e cuidado clínico de um hospital especializado.</p>
           <p style="margin:0;">Aqui, cada decisão é pensada com calma: do <mark style="background:#EEF5F3; color:#0F3B38; padding:2px 6px; border-radius:4px;">diagnóstico detalhado</mark> ao plano individual para recuperar função, estética e segurança ao sorrir.</p>
           <p style="margin:0;"><em style="color:#1F8A82; font-style:italic;">Nossa equipe é dedicada a implantodontia e reabilitação oral</em>, atendendo pacientes nas unidades Pituba e Shopping Paralela, em Salvador.</p>
-          <div style="border-left:4px solid #99C03C; background:#F7F5F1; border-radius:0 8px 8px 0; padding:16px 18px; color:#25403d; font-size:15px; line-height:1.65;">Um ambiente preparado para quem busca um tratamento mais previsível, acolhedor e conduzido com responsabilidade em cada etapa.</div>
+          <div style="padding-top:4px;">
+            <p style="color:#0F3B38; font-size:clamp(23px,2.6vw,30px); line-height:1.16; font-weight:800; margin:0 0 14px;">Descubra se o implante é indicado para o seu caso.</p>
+            <p style="color:#4d625f; font-size:16px; line-height:1.6; margin:0 0 18px;">Converse com nossa equipe e receba uma orientação inicial para dar o próximo passo com confiança.</p>
+            <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Quero avaliar meu caso</a>
+          </div>
         </div>
       </div>
       <div data-reveal="aboutImg" style="{{ aboutImgStyle }}">
@@ -363,6 +445,11 @@
         <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,48px); line-height:1.06; font-weight:800; color:#fff; margin:0;">O HOE &eacute; refer&ecirc;ncia em <span class="authority-highlight">implante dent&aacute;rio</span> na Bahia.</h2>
         <p style="color:#D7E5E1; font-size:17px; line-height:1.75; max-width:560px; margin:0;">Aqui, tecnologia e protocolo hospitalar trabalham juntos. Cada caso &eacute; avaliado com recursos modernos, conduzido por especialistas e acompanhado com o cuidado de quem entende que mastigar, sorrir e falar com seguran&ccedil;a muda a rotina de uma pessoa.</p>
         <div style="border-left:4px solid #99C03C; padding:14px 0 14px 18px; color:#F2F7F5; font-size:15px; line-height:1.65; max-width:520px;">Centro cir&uacute;rgico pr&oacute;prio, equipe multidisciplinar e experi&ecirc;ncia em casos simples e complexos.</div>
+        <div class="authority-cta">
+          <p style="color:#fff; font-size:clamp(22px,2.6vw,30px); line-height:1.16; font-weight:800; margin:0 0 12px;">D&ecirc; hoje o primeiro passo para voltar a sorrir com seguran&ccedil;a.</p>
+          <p style="color:#CFE0DC; font-size:16px; line-height:1.6; max-width:520px; margin:0 0 18px;">Fale com nossa equipe e descubra o melhor caminho para o seu implante.</p>
+          <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Clique aqui e fale conosco</a>
+        </div>
       </div>
       <div class="authority-proof">
         <div class="authority-item" style="--metric:#99C03C;">
@@ -402,33 +489,23 @@
   </section>
   <!-- DEPOIMENTOS EM VIDEO -->
   <section id="depoimentos-video" class="video-testimonials-section">
-    <div class="video-testimonials-shell">
-      <div class="video-testimonials-head">
-        <div>
-          <div class="steps-kicker"><span></span>Hist&oacute;rias reais</div>
-          <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,44px); line-height:1.08; font-weight:800; color:#0F3B38; margin:22px 0 16px;">Depoimentos de pacientes</h2>
-          <p style="color:#4d625f; font-size:16.5px; line-height:1.7; max-width:660px; margin:0;">Veja relatos de quem passou pelo tratamento e voltou a sorrir com mais seguran&ccedil;a, conforto e confian&ccedil;a no dia a dia.</p>
-        </div>
-        <div style="border-left:4px solid #CE167A; padding:14px 0 14px 18px; color:#25403d; font-size:15px; line-height:1.65;">Cada caso &eacute; avaliado individualmente pela equipe HOE, com recursos tecnol&oacute;gicos e acompanhamento em todas as etapas.</div>
+    <div class="testimonial-cta-shell">
+      <div class="testimonial-cta-copy">
+        <div class="steps-kicker"><span></span>Hist&oacute;ria real</div>
+        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,46px); line-height:1.08; font-weight:800; color:#0F3B38; margin:22px 0 18px;">Voltar a sorrir com seguran&ccedil;a pode mudar a sua rotina.</h2>
+        <p style="color:#4d625f; font-size:17px; line-height:1.75; max-width:540px; margin:0 0 18px;">Assista a este depoimento e veja como um tratamento planejado pode devolver conforto, autoestima e confian&ccedil;a para sorrir todos os dias.</p>
+        <p style="color:#0F3B38; font-size:20px; line-height:1.35; font-weight:800; max-width:520px; margin:0 0 24px;">O pr&oacute;ximo sorriso transformado pode ser o seu.</p>
+        <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Quero come&ccedil;ar minha transforma&ccedil;&atilde;o</a>
       </div>
-      <div class="video-testimonials-grid">
-        <sc-for list="{{ videoTestimonials }}" as="v" hint-placeholder-count="3">
-          <article class="video-testimonial" data-reveal="{{ v.revealId }}" style="{{ v.style }}">
-            <div class="video-frame">
-              <sc-if value="{{ !v.open }}" hint-placeholder-val="true">
-                <button class="video-cover" onClick="{{ v.play }}" aria-label="Reproduzir depoimento de {{ v.name }}" style="background:url('{{ v.cover }}') center/cover no-repeat;">
-                  <span class="video-play"><span></span></span>
-                </button>
-              </sc-if>
-              <sc-if value="{{ v.open }}" hint-placeholder-val="false">
-                <video src="{{ v.src }}" controls autoplay playsinline onClick="{{ togglePatientVideo }}" style="cursor:pointer;"></video>
-              </sc-if>
-            </div>
-          </article>
-        </sc-for>
-      </div>
-      <div class="video-testimonials-cta">
-        <a href="{{ whatsappLink }}" target="_blank" rel="noopener">Quero agendar minha avalia&ccedil;&atilde;o</a>
+      <div class="testimonial-cta-video">
+        <sc-if value="{{ !testimonialCtaVideoOpen }}" hint-placeholder-val="{{ true }}">
+          <button class="testimonial-cta-cover" onClick="{{ playTestimonialCtaVideo }}" aria-label="Reproduzir depoimento">
+            <span class="story-cta-play"><span></span></span>
+          </button>
+        </sc-if>
+        <sc-if value="{{ testimonialCtaVideoOpen }}" hint-placeholder-val="{{ false }}">
+          <video src="assets/paciente3.mp4" controls autoplay playsinline></video>
+        </sc-if>
       </div>
     </div>
   </section>
@@ -461,7 +538,7 @@
         </div>
       </div>
       <div class="units-cta">
-        <a href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:50px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Falar no WhatsApp</a>
+        <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:50px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Agendar na unidade mais próxima</a>
       </div>
     </div>
   </section>
@@ -495,7 +572,7 @@
       <div class="cta2-copy">
         <h2 class="cta2-title" style="font-family:'Work Sans',sans-serif; font-weight:600; color:#fff; margin:0 0 14px;">Ainda com dúvidas? Fale agora com nossa equipe.</h2>
         <p style="color:#cfe0dc; font-size:16px; margin:0 0 26px;">Atendimento pelo WhatsApp, com resposta rápida.</p>
-        <a style="display:inline-block; background:#99C03C; color:#0F3B38; text-decoration:none; padding:14px 28px; border-radius:4px; font-size:16px; font-weight:700;" href="{{ whatsappLink }}" target="_blank" rel="noopener">Enviar mensagem</a>
+        <a class="whatsapp-animated" style="display:inline-block; background:#99C03C; color:#0F3B38; text-decoration:none; padding:14px 28px; border-radius:4px; font-size:16px; font-weight:700;" href="{{ whatsappLink }}" target="_blank" rel="noopener">Quero tirar minhas dúvidas agora</a>
       </div>
     </div>
   </section>
@@ -537,7 +614,7 @@
   </footer>
 
   <!-- WHATSAPP FLUTUANTE -->
-  <a href="{{ whatsappLink }}" target="_blank" rel="noopener" aria-label="Falar no WhatsApp" style="position:fixed; bottom:22px; right:22px; width:58px; height:58px; border-radius:50%; background:#99C03C; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(0,0,0,0.25); z-index:150; text-decoration:none;">
+  <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" aria-label="Falar no WhatsApp" style="position:fixed; bottom:22px; right:22px; width:58px; height:58px; border-radius:50%; background:#99C03C; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(0,0,0,0.25); z-index:150; text-decoration:none;">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.84.5 3.55 1.36 5.03L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.92C21.96 6.45 17.5 2 12.04 2zm5.83 14.02c-.25.7-1.45 1.34-2 1.42-.51.08-1.16.11-1.87-.12-.43-.13-.98-.31-1.68-.6-2.96-1.28-4.9-4.25-5.04-4.45-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.26-.3.58-.37.77-.37.2 0 .39.003.56.01.18.008.42-.07.65.5.25.6.85 2.08.92 2.23.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.3.38-.43.5-.15.15-.3.31-.13.6.17.3.75 1.24 1.62 2.01 1.11.99 2.03 1.3 2.35 1.44.24.1.39.09.53-.05.18-.18.4-.48.63-.78.16-.21.36-.24.58-.15.23.08 1.44.68 1.68.8.25.13.42.19.48.3.06.11.06.62-.19 1.28z"/></svg>
   </a>
 </div>
@@ -578,7 +655,7 @@ const FAQ_BASE = [
 ];
 
 class Component extends DCLogic {
-  state = { visible: {}, popupOpen: true, testimonialIndex: 0, openFaq: null, videoOpen: false, openPatientVideo: null };
+  state = { visible: {}, popupOpen: true, testimonialIndex: 0, openFaq: null, videoOpen: false, storyVideoOpen: false, ctaVideoOpen: false, testimonialCtaVideoOpen: false, openPatientVideo: null };
 
   setRootRef = (el) => { this.root = el; };
 
@@ -613,6 +690,9 @@ class Component extends DCLogic {
 
   closePopup = () => this.setState({ popupOpen: false });
   playAboutVideo = () => this.setState({ videoOpen: true });
+  playStoryVideo = () => this.setState({ storyVideoOpen: true });
+  playCtaVideo = () => this.setState({ ctaVideoOpen: true });
+  playTestimonialCtaVideo = () => this.setState({ testimonialCtaVideoOpen: true });
   playPatientVideo = (id) => this.setState({ openPatientVideo: id });
   toggleFaq = (i) => this.setState((s) => ({ openFaq: s.openFaq === i ? null : i }));
   prevTestimonial = () => this.setState((s) => ({ testimonialIndex: (s.testimonialIndex - 1 + TESTIMONIALS.length) % TESTIMONIALS.length }));
@@ -678,6 +758,12 @@ class Component extends DCLogic {
       whatsappLink,
       videoOpen: s.videoOpen,
       playAboutVideo: this.playAboutVideo,
+      storyVideoOpen: s.storyVideoOpen,
+      playStoryVideo: this.playStoryVideo,
+      ctaVideoOpen: s.ctaVideoOpen,
+      playCtaVideo: this.playCtaVideo,
+      testimonialCtaVideoOpen: s.testimonialCtaVideoOpen,
+      playTestimonialCtaVideo: this.playTestimonialCtaVideo,
       heroLogoStyle: this.reveal('heroLogo', 'translateY(16px)', 0),
       heroTitleStyle: { ...this.reveal('heroTitle', 'translateY(24px)', 0.15), fontFamily: "'Work Sans', sans-serif", color: '#fff', fontSize: 'clamp(21px,4vw,38px)', lineHeight: 1.2, fontWeight: 600, margin: '22px 0 16px' },
       heroSubStyle: { ...this.reveal('heroSub', 'translateY(24px)', 0.3), color: '#e7ece9', fontSize: 18, lineHeight: 1.6, margin: '0 0 28px', maxWidth: 460 },
