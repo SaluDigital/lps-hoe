@@ -14,7 +14,7 @@
   <meta property="og:title" content="Odontofobia e Sedação em Salvador | HOE" />
   <meta property="og:description" content="Atendimento odontológico para quem adiou cuidados por medo, com escuta, planejamento e possibilidades de sedação conforme avaliação profissional." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/hero-protese.webp" />
+  <meta property="og:image" content="assets/hero-odontofobia.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Odontofobia e Sedação em Salvador | HOE" />
   <meta name="twitter:description" content="Acolhimento, avaliação individual e orientação sobre sedação para pacientes com medo ou ansiedade no dentista." />
@@ -28,17 +28,18 @@
     .cta1-title { font-size: clamp(28px,4vw,42px); }
     .about-shell { display: grid; grid-template-columns: minmax(0,0.9fr) minmax(0,1.1fr); gap: 56px; }
     .cta2-shell { display: flex; justify-content: flex-end; }
-    .cta2-copy { max-width: 480px; text-align: right; }
+    .cta2-copy { max-width: 760px; text-align: right; }
     .cta2-title { font-size: clamp(24px,3.5vw,32px); }
     @media (max-width: 640px) {
       .hero-copy { max-width: 60%; }
-      #hero { background-position: 0% 0%, calc(35% - 280px) center !important; }
+      #hero { background-position: 0% 0%, calc(35% - 360px) center !important; }
       #cta-1 { background-position: 0% 0%, calc(25% - 390px) center !important; }
       .cta1-copy { max-width: 60%; }
       .cta1-title { font-size: 22px; }
       .cta2-copy { width: 60%; max-width: 60%; min-width: 0; text-align: right; box-sizing: border-box; overflow-wrap: break-word; }
       .cta2-title { font-size: 20px; }
-      #cta-2 { padding-top: 110px !important; padding-bottom: 110px !important; background-position: 0% 0%, calc(68% + 160px) center !important; }
+      .cta2-copy p { white-space: normal !important; }
+      #cta-2 { padding-top: 110px !important; padding-bottom: 110px !important; background-position: 0% 0%, calc(68% + 210px) center !important; }
     }
     @media (max-width: 760px) {
       .footer-grid { flex-direction: column; align-items: center; text-align: center; }
@@ -125,7 +126,7 @@
     .steps-section { position: relative; overflow: hidden; background: linear-gradient(135deg, #F7F5F1 0%, #FFFFFF 50%, #EEF5F3 100%); padding: 76px 24px; color: #16302E; }
     .steps-section::before { content: ''; position: absolute; width: 420px; height: 420px; border-radius: 50%; background: rgba(153,192,60,0.11); left: -190px; top: -220px; }
     .steps-section::after { content: ''; position: absolute; width: 360px; height: 360px; border-radius: 50%; background: rgba(31,138,130,0.08); right: -170px; bottom: -190px; }
-    .steps-shell { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: minmax(250px, 0.58fr) minmax(0, 1.42fr); gap: 34px; align-items: stretch; }
+    .steps-shell { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: minmax(360px, 0.82fr) minmax(0, 1.18fr); gap: 34px; align-items: stretch; }
     .steps-header { position: sticky; top: 24px; display: flex; flex-direction: column; min-height: 100%; }
     .steps-kicker { display: inline-flex; align-items: center; gap: 9px; width: fit-content; color: #1F8A82; background: #E8F2EF; border: 1px solid #D4E6E2; border-radius: 999px; padding: 8px 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
     .steps-kicker span { width: 7px; height: 7px; border-radius: 50%; background: #99C03C; box-shadow: 0 0 0 5px rgba(153,192,60,0.18); }
@@ -250,13 +251,13 @@
   </sc-if>
 
   <!-- HERO -->
-  <header id="hero" style="min-height:640px; display:flex; align-items:center; background:linear-gradient(90deg, rgba(8,26,24,0.88) 0%, rgba(8,26,24,0.6) 40%, rgba(8,26,24,0.15) 75%), url('assets/hero-protese.webp') 35% center/cover no-repeat; padding:40px 24px;">
+  <header id="hero" style="min-height:640px; display:flex; align-items:center; background:linear-gradient(90deg, rgba(8,26,24,0.88) 0%, rgba(8,26,24,0.6) 40%, rgba(8,26,24,0.15) 75%), url('assets/hero-odontofobia.webp') 35% center/cover no-repeat; padding:40px 24px;">
     <div style="max-width:1200px; margin:0 auto; width:100%;">
       <div class="hero-copy">
         <img data-reveal="heroLogo" style="{{ heroLogoStyle }}" src="assets/logo-hoe.webp" alt="HOE - Hospital de Odontologia Especializada" width="180" height="72" />
         <h1 data-reveal="heroTitle" style="{{ heroTitleStyle }}">O medo de dentista não precisa continuar adiando seus cuidados.</h1>
-        <p data-reveal="heroSub" style="{{ heroSubStyle }}">Se você tem ansiedade, já viveu experiências negativas ou evita tratamento por medo, o HOE oferece atendimento acolhedor, avaliação individual e orientação sobre possibilidades de sedação conforme necessidade clínica.</p>
-        <a class="whatsapp-animated" data-reveal="heroBtn" style="{{ heroBtnStyle }}" href="{{ whatsappLink }}" target="_blank" rel="noopener">Quero entender minhas opções</a>
+        <p data-reveal="heroSub" style="{{ heroSubStyle }}">Se ansiedade, trauma ou experiências negativas fizeram você evitar a cadeira odontológica, o HOE oferece escuta, planejamento individual e orientação sobre possibilidades de sedação.</p>
+        <a class="whatsapp-animated" data-reveal="heroBtn" style="{{ heroBtnStyle }}" href="{{ whatsappLink }}" target="_blank" rel="noopener">Quero saber mais</a>
       </div>
     </div>
   </header>
@@ -271,7 +272,7 @@
           <circle cx="23" cy="19" r="5.2" stroke="#fff" stroke-width="1.6"/>
           <path d="M26.7 22.7L29.5 25.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
         </svg>
-        <p style="color:#fff; font-size:14px; font-weight:600; line-height:1.4; margin:0;">Para quem tem medo de dentista</p>
+        <p style="color:#fff; font-size:14px; font-weight:600; line-height:1.4; margin:0;">Para quem evita a cadeira odontológica</p>
       </div>
 
       <div style="display:flex; align-items:center; gap:14px; flex:1 1 220px; min-width:220px;">
@@ -290,7 +291,7 @@
           <rect x="12" y="3.5" width="8" height="5" rx="1.3" stroke="#fff" stroke-width="1.6"/>
           <path d="M16 13.5c-2.1 0-3.6 1.7-3.6 4 0 2 .9 3.6 1.4 5.2.3 1 .6 1.9 1.4 1.9.7 0 .8-1 1-1.7.2-.8.4-1.3.8-1.3s.6.5.8 1.3c.2.7.3 1.7 1 1.7.8 0 1.1-.9 1.4-1.9.5-1.6 1.4-3.2 1.4-5.2 0-2.3-1.5-4-3.6-4z" stroke="#fff" stroke-width="1.3" stroke-linejoin="round"/>
         </svg>
-        <p style="color:#fff; font-size:14px; font-weight:600; line-height:1.4; margin:0;">Cuidado para ansiedade e trauma odontológico</p>
+        <p style="color:#fff; font-size:14px; font-weight:600; line-height:1.4; margin:0;">Atenção a ansiedade e experiências negativas</p>
       </div>
 
       <div style="display:flex; align-items:center; gap:14px; flex:1 1 220px; min-width:220px;">
@@ -310,12 +311,12 @@
       <div class="treatments-copy">
         <div>
           <div class="treatments-kicker"><span></span>Odontofobia e sedação</div>
-          <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,46px); line-height:1.08; font-weight:700; color:#0F3B38; margin:24px 0 18px;">Para quem adiou o dentista por medo</h2>
-          <p style="color:#4d625f; font-size:17px; line-height:1.7; max-width:420px; margin:0;">Você não precisa chegar pronto para enfrentar tudo. Primeiro a equipe entende seu medo, explica as etapas e avalia quais recursos podem tornar o atendimento mais tranquilo.</p>
+          <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,46px); line-height:1.08; font-weight:700; color:#0F3B38; margin:24px 0 18px;">Quando o receio vira barreira</h2>
+          <p style="color:#4d625f; font-size:17px; line-height:1.7; max-width:420px; margin:0;">Você não precisa chegar pronto para enfrentar tudo. Primeiro a equipe entende sua história, explica as etapas e avalia recursos para uma experiência mais tranquila.</p>
         </div>
         <div class="treatments-cta">
           <p style="color:#0F3B38; font-size:clamp(24px,3vw,32px); line-height:1.12; font-weight:800; margin:0 0 16px;">Seu primeiro passo pode ser só conversar.</p>
-          <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Falar com o HOE</a>
+          <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Clique aqui para agendar</a>
         </div>
       </div>
       <div class="treatments-grid">
@@ -337,8 +338,8 @@
       <div class="story-cta-copy">
         <div style="display:inline-flex; align-items:center; gap:9px; color:#DFF0C5; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16); border-radius:999px; padding:8px 12px; font-size:12px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; margin:0 0 20px;"><span style="width:7px; height:7px; border-radius:50%; background:#99C03C; box-shadow:0 0 0 5px rgba(153,192,60,0.18);"></span>Medo, ansiedade ou trauma</div>
         <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,48px); line-height:1.06; font-weight:800; color:#fff; margin:0 0 18px;">Se só de ouvir “dentista” você já treme, existe um caminho mais tranquilo.</h2>
-        <p style="color:#D7E5E1; font-size:17px; line-height:1.75; max-width:540px; margin:0 0 18px;">No HOE, você pode conhecer a sedação consciente e outros recursos de conforto para cuidar do sorriso com mais segurança, sempre após avaliação profissional.</p>
-        <p style="color:#fff; font-size:20px; line-height:1.35; font-weight:700; max-width:520px; margin:0 0 24px;">Tratamento com acolhimento, planejamento e tranquilidade para quem adiou o cuidado por medo.</p>
+        <p style="color:#D7E5E1; font-size:17px; line-height:1.75; max-width:540px; margin:0 0 18px;">No HOE, você conhece alternativas como sedação consciente e outros recursos de conforto para cuidar do sorriso com mais segurança, sempre após análise profissional.</p>
+        <p style="color:#fff; font-size:20px; line-height:1.35; font-weight:700; max-width:520px; margin:0 0 24px;">Um caminho pensado para quem adiou consultas e quer retomar a saúde bucal com calma.</p>
         <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Agendar avaliação</a>
       </div>
       <div class="story-cta-video">
@@ -358,8 +359,8 @@
     <div class="steps-shell">
       <div class="steps-header">
         <div class="steps-kicker"><span></span>Sem pressa e sem surpresa</div>
-        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,44px); line-height:1.08; font-weight:700; color:#0F3B38; margin:22px 0 16px;">Como funciona o atendimento para odontofobia?</h2>
-        <p style="color:#4d625f; font-size:16px; line-height:1.7; max-width:430px; margin:0;">Antes de indicar qualquer procedimento ou sedação, a equipe entende seu histórico, sua ansiedade e o que você precisa tratar.</p>
+        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,3.3vw,42px); line-height:1.08; font-weight:700; color:#0F3B38; margin:22px 0 16px;">O que acontece antes do procedimento?</h2>
+        <p style="color:#4d625f; font-size:16px; line-height:1.7; max-width:430px; margin:0;">Antes de qualquer indicação, a equipe entende seu histórico, seus gatilhos e quais cuidados precisam ser priorizados.</p>
         <div class="steps-summary">
           <strong style="display:block; color:#0F3B38; font-size:20px; line-height:1.2; margin-bottom:6px;">Etapas do cuidado</strong>
           <span>Escuta, avaliação, explicação das opções e acompanhamento.</span>
@@ -399,10 +400,10 @@
       </div>
       <div>
         <div style="display:inline-flex; align-items:center; gap:9px; color:#DFF0C5; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16); border-radius:999px; padding:8px 12px; font-size:12px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; margin:0 0 20px;"><span style="width:7px; height:7px; border-radius:50%; background:#99C03C; box-shadow:0 0 0 5px rgba(153,192,60,0.18);"></span>No HOE, é assim</div>
-        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,46px); line-height:1.08; font-weight:800; color:#fff; margin:0 0 18px;">Tratamento com conforto, segurança e avaliação profissional.</h2>
-        <p style="color:#D7E5E1; font-size:17px; line-height:1.75; max-width:540px; margin:0 0 18px;">No HOE, acolhimento, cuidado e segurança fazem parte de cada atendimento. Para quem tem medo de dentista, avaliamos recursos de conforto e possibilidades de sedação conforme a necessidade de cada caso.</p>
-        <p style="color:#fff; font-size:20px; line-height:1.35; font-weight:800; max-width:520px; margin:0 0 24px;">Agende sua avaliação e entenda como realizar seu tratamento odontológico com mais tranquilidade.</p>
-        <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Agendar avaliação</a>
+        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,46px); line-height:1.08; font-weight:800; color:#fff; margin:0 0 18px;">Mais controle para seguir com o tratamento.</h2>
+        <p style="color:#D7E5E1; font-size:17px; line-height:1.75; max-width:540px; margin:0 0 18px;">A equipe apresenta recursos de conforto, combina sinais de pausa quando necessário e orienta sobre sedação apenas quando ela faz sentido para o caso.</p>
+        <p style="color:#fff; font-size:20px; line-height:1.35; font-weight:800; max-width:520px; margin:0 0 24px;">Marque uma consulta e veja como tornar o cuidado odontológico mais leve.</p>
+        <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Clique aqui para agendar consulta</a>
       </div>
     </div>
   </section>
@@ -412,15 +413,13 @@
     <div class="about-shell" style="position:relative; z-index:1; max-width:1200px; margin:0 auto; align-items:center;">
       <div data-reveal="aboutText" style="{{ aboutTextStyle }}">
         <p style="display:inline-flex; align-items:center; gap:9px; color:#1F8A82; background:#E8F2EF; border:1px solid #D4E6E2; border-radius:999px; padding:8px 12px; font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin:0 0 18px;"><span style="width:7px; height:7px; border-radius:50%; background:#99C03C; box-shadow:0 0 0 5px rgba(153,192,60,0.16);"></span>Hospital odontológico</p>
-        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,44px); line-height:1.08; font-weight:700; color:#0F3B38; margin:0 0 24px;">Atendimento para quem tem medo de dentista</h2>
+        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,44px); line-height:1.08; font-weight:700; color:#0F3B38; margin:0 0 24px;">Um hospital odontológico preparado para acolher</h2>
         <div style="display:grid; gap:22px; color:#314744; font-size:16px; line-height:1.8;">
-          <p style="margin:0;">No <strong style="color:#0F3B38;">HOE — Hospital de Odontologia Especializada</strong>, o paciente que tem medo não é tratado como exagerado. A consulta começa entendendo o que você sente e o que fez você adiar o cuidado.</p>
-          <p style="margin:0;">A partir da <mark style="background:#EEF5F3; color:#0F3B38; padding:2px 6px; border-radius:4px;">avaliação individual</mark>, a equipe explica as etapas, orienta sobre anestesia e discute possibilidades de sedação quando houver indicação profissional.</p>
-          <p style="margin:0;"><em style="color:#1F8A82; font-style:italic;">O objetivo é reduzir insegurança e criar um plano viável</em> para quem tem ansiedade, trauma odontológico ou medo de sentir dor.</p>
+          <p style="margin:0;">No <strong style="color:#0F3B38;">HOE — Hospital de Odontologia Especializada</strong>, receio, vergonha ou tensão não são tratados como exagero. A consulta começa entendendo o que levou você a pausar seus cuidados.</p>
+          <p style="margin:0;"><em style="color:#1F8A82; font-style:italic;">O objetivo é criar um plano possível</em> para quem lida com ansiedade, trauma odontológico ou preocupação com dor.</p>
           <div style="padding-top:4px;">
             <p style="color:#0F3B38; font-size:clamp(23px,2.6vw,30px); line-height:1.16; font-weight:800; margin:0 0 14px;">A primeira conversa já pode destravar o cuidado.</p>
-            <p style="color:#4d625f; font-size:16px; line-height:1.6; margin:0 0 18px;">Fale com a equipe e entenda como funciona a avaliação para pacientes com medo, ansiedade ou trauma.</p>
-            <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Conversar pelo WhatsApp</a>
+            <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Clique aqui e fale com nossa equipe</a>
           </div>
         </div>
       </div>
@@ -444,13 +443,11 @@
     <div class="authority-shell">
       <div class="authority-copy">
         <div class="authority-kicker"><span></span>Odontofobia e sedação com avaliação</div>
-        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,48px); line-height:1.06; font-weight:800; color:#fff; margin:0;">No HOE, quem tem <span class="authority-highlight">medo de dentista</span> encontra escuta antes de qualquer procedimento.</h2>
-        <p style="color:#D7E5E1; font-size:17px; line-height:1.75; max-width:560px; margin:0;">A equipe avalia seu caso, explica as possibilidades de conforto e define se a sedação é indicada. O foco é cuidar da sua saúde bucal sem pressão e sem promessas genéricas.</p>
-        <div style="border-left:4px solid #99C03C; padding:14px 0 14px 18px; color:#F2F7F5; font-size:15px; line-height:1.65; max-width:520px;">Sedação, anestesia e outros recursos de conforto são discutidos de forma individual, conforme necessidade, segurança e avaliação profissional.</div>
+        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,48px); line-height:1.06; font-weight:800; color:#fff; margin:0;">Aqui, a <span class="authority-highlight">escuta vem antes</span> de qualquer procedimento.</h2>
         <div class="authority-cta">
-          <p style="color:#fff; font-size:clamp(22px,2.6vw,30px); line-height:1.16; font-weight:800; margin:0 0 12px;">Não sabe se sedação é para você?</p>
-          <p style="color:#CFE0DC; font-size:16px; line-height:1.6; max-width:520px; margin:0 0 18px;">Agende uma avaliação e entenda as opções possíveis para o seu caso.</p>
-          <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Quero ser avaliado</a>
+          <p style="color:#fff; font-size:clamp(22px,2.6vw,30px); line-height:1.16; font-weight:800; margin:0 0 12px;">Quer saber mais?</p>
+          <p style="color:#CFE0DC; font-size:16px; line-height:1.6; max-width:520px; margin:0 0 18px;">Converse com a equipe e receba orientação para o seu caso.</p>
+          <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Quero saber mais</a>
         </div>
       </div>
       <div class="authority-proof">
@@ -494,9 +491,9 @@
     <div class="testimonial-cta-shell">
       <div class="testimonial-cta-copy">
         <div class="steps-kicker"><span></span>Depoimento</div>
-        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,46px); line-height:1.08; font-weight:800; color:#0F3B38; margin:22px 0 18px;">Quem tem medo de dentista também merece sorrir com tranquilidade.</h2>
-        <p style="color:#4d625f; font-size:17px; line-height:1.75; max-width:540px; margin:0 0 18px;">No HOE, acolhimento, cuidado e segurança fazem parte de cada atendimento. A avaliação individual ajuda a entender seu medo e as possibilidades para seguir o tratamento com mais confiança.</p>
-        <p style="color:#0F3B38; font-size:20px; line-height:1.35; font-weight:800; max-width:520px; margin:0 0 24px;">Confira o depoimento de quem transformou o medo em confiança.</p>
+        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,46px); line-height:1.08; font-weight:800; color:#0F3B38; margin:22px 0 18px;">Um relato para quem ainda está inseguro.</h2>
+        <p style="color:#4d625f; font-size:17px; line-height:1.75; max-width:540px; margin:0 0 18px;">Veja como uma paciente retomou o tratamento depois de anos evitando consultas e encontrou uma forma mais confiante de cuidar do sorriso.</p>
+        <p style="color:#0F3B38; font-size:20px; line-height:1.35; font-weight:800; max-width:520px; margin:0 0 24px;">Às vezes, ouvir outra história ajuda a dar o primeiro passo.</p>
         <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Agendar avaliação</a>
       </div>
       <div class="testimonial-cta-video">
@@ -569,12 +566,12 @@
   </section>
 
   <!-- CTA 2 -->
-  <section id="cta-2" style="background:linear-gradient(90deg, rgba(8,26,24,0.08) 0%, rgba(8,26,24,0.46) 55%, rgba(8,26,24,0.93) 100%), url('assets/call-protese.webp') 68% center/cover no-repeat; padding:190px 24px;">
+  <section id="cta-2" style="background:linear-gradient(90deg, rgba(8,26,24,0.08) 0%, rgba(8,26,24,0.46) 55%, rgba(8,26,24,0.93) 100%), url('assets/call-odontofobia.webp') 68% center/cover no-repeat; padding:190px 24px;">
     <div data-reveal="cta2" class="cta2-shell" style="{{ cta2Style }}">
       <div class="cta2-copy">
-        <h2 class="cta2-title" style="font-family:'Work Sans',sans-serif; font-weight:600; color:#fff; margin:0 0 14px;">Quer parar de adiar seus cuidados?</h2>
-        <p style="color:#cfe0dc; font-size:16px; margin:0 0 26px;">Fale pelo WhatsApp e agende uma avaliação para entender suas possibilidades.</p>
-        <a class="whatsapp-animated" style="display:inline-block; background:#99C03C; color:#0F3B38; text-decoration:none; padding:14px 28px; border-radius:4px; font-size:16px; font-weight:700;" href="{{ whatsappLink }}" target="_blank" rel="noopener">Quero avaliação</a>
+        <h2 class="cta2-title" style="font-family:'Work Sans',sans-serif; font-weight:600; color:#fff; margin:0 0 14px;">Pare de adiar os cuidados com sua saúde bucal</h2>
+        <p style="color:#cfe0dc; font-size:clamp(14px,1.35vw,16px); margin:0 0 26px; white-space:nowrap;">Agende agora mesmo uma avaliação para transformar o seu sorriso.</p>
+        <a class="whatsapp-animated" style="display:inline-block; background:#99C03C; color:#0F3B38; text-decoration:none; padding:14px 28px; border-radius:4px; font-size:16px; font-weight:700;" href="{{ whatsappLink }}" target="_blank" rel="noopener">Quero agendar uma avaliação</a>
       </div>
     </div>
   </section>
@@ -624,32 +621,32 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 const TESTIMONIALS = [
-  { name: 'Marta S.', treatment: 'Medo de dentista', text: 'Eu adiava consulta por medo. Na avaliação, a equipe ouviu minha história e explicou o que poderia ser feito.' },
-  { name: 'Roberto A.', treatment: 'Ansiedade odontológica', text: 'Cheguei muito ansioso. Entender as etapas antes do tratamento me deixou mais seguro para continuar.' },
-  { name: 'Cláudia M.', treatment: 'Experiência negativa anterior', text: 'Eu tinha trauma de dentista. O acolhimento e a explicação clara mudaram minha forma de encarar a consulta.' },
-  { name: 'Eduardo L.', treatment: 'Avaliação para sedação', text: 'Procurei o HOE para entender se sedação faria sentido no meu caso. A equipe explicou as possibilidades com responsabilidade.' },
-  { name: 'Patrícia N.', treatment: 'Tratamento adiado', text: 'Foi importante perceber que eu não precisava decidir tudo sozinha antes da avaliação.' },
+  { name: 'Marta S.', treatment: 'Receio antigo', text: 'Eu adiava consulta há anos. A equipe ouviu minha história e mostrou um caminho possível.' },
+  { name: 'Roberto A.', treatment: 'Ansiedade odontológica', text: 'Cheguei tenso. Saber o que aconteceria em cada etapa me ajudou a continuar.' },
+  { name: 'Cláudia M.', treatment: 'Experiência negativa anterior', text: 'Eu carregava trauma de atendimentos antigos. A explicação clara mudou minha relação com a consulta.' },
+  { name: 'Eduardo L.', treatment: 'Orientação sobre sedação', text: 'Procurei o HOE para entender alternativas de conforto. Recebi uma orientação responsável.' },
+  { name: 'Patrícia N.', treatment: 'Cuidado retomado', text: 'Percebi que não precisava resolver tudo sozinha antes de conversar com um profissional.' },
 ];
 
 const TREATMENTS_BASE = [
-  { title: 'Medo de dentista', desc: 'Para quem evita consulta por receio do procedimento, da anestesia, dos instrumentos ou do ambiente odontológico.', eyebrow: 'Odontofobia', metaA: 'Escuta', metaB: 'Acolhimento', accent: '#4A7FB8', accentTint: 'rgba(74,127,184,0.12)', icon: 'unit' },
-  { title: 'Ansiedade antes da consulta', desc: 'Atendimento com explicação passo a passo para diminuir insegurança e ajudar você a se preparar.', eyebrow: 'Ansiedade', metaA: 'Previsibilidade', metaB: 'Calma', accent: '#8FAE3E', accentTint: 'rgba(143,174,62,0.14)', icon: 'multi' },
-  { title: 'Experiências negativas', desc: 'Avaliação cuidadosa para quem já passou por dor, susto, vergonha ou atendimento ruim no passado.', eyebrow: 'Trauma', metaA: 'Respeito', metaB: 'Ritmo', accent: '#E8B93E', accentTint: 'rgba(232,185,62,0.18)', icon: 'bridge' },
-  { title: 'Possibilidades de sedação', desc: 'A equipe orienta sobre recursos de conforto e sedação somente após entender sua saúde e necessidade clínica.', eyebrow: 'Sedação', metaA: 'Avaliação', metaB: 'Indicação', accent: '#A3155F', accentTint: 'rgba(163,21,95,0.12)', icon: 'arch' },
+  { title: 'Receio do procedimento', desc: 'Para quem se incomoda com instrumentos, anestesia, ambiente clínico ou lembranças de consultas anteriores.', eyebrow: 'Odontofobia', metaA: 'Escuta', metaB: 'Acolhimento', accent: '#4A7FB8', accentTint: 'rgba(74,127,184,0.12)', icon: 'unit' },
+  { title: 'Tensão antes de chegar', desc: 'Orientação passo a passo para reduzir surpresa e ajudar você a se preparar melhor.', eyebrow: 'Ansiedade', metaA: 'Previsibilidade', metaB: 'Calma', accent: '#8FAE3E', accentTint: 'rgba(143,174,62,0.14)', icon: 'multi' },
+  { title: 'Histórico difícil', desc: 'Um olhar cuidadoso para quem já passou por dor, susto, vergonha ou atendimento ruim.', eyebrow: 'Trauma', metaA: 'Respeito', metaB: 'Ritmo', accent: '#E8B93E', accentTint: 'rgba(232,185,62,0.18)', icon: 'bridge' },
+  { title: 'Recursos de conforto', desc: 'Sedação e outras estratégias são discutidas somente depois de entender sua saúde e o procedimento indicado.', eyebrow: 'Sedação', metaA: 'Critério', metaB: 'Indicação', accent: '#A3155F', accentTint: 'rgba(163,21,95,0.12)', icon: 'arch' },
 ];
 const STEPS_BASE = [
-  { title: 'Escuta inicial', desc: 'Você conta o que sente, o que já aconteceu e o que mais te preocupa no atendimento.', eyebrow: 'Etapa 1', status: 'Acolhimento', accent: '#1F8A82', accentTint: 'rgba(31,138,130,0.12)' },
-  { title: 'Avaliação individual', desc: 'A equipe avalia sua saúde bucal e entende quais cuidados precisam ser priorizados.', eyebrow: 'Etapa 2', status: 'Diagnóstico', accent: '#8FAE3E', accentTint: 'rgba(143,174,62,0.14)' },
-  { title: 'Opções de conforto', desc: 'São explicadas possibilidades como anestesia, abordagem gradual e sedação quando houver indicação.', eyebrow: 'Etapa 3', status: 'Orientação', accent: '#E8B93E', accentTint: 'rgba(232,185,62,0.18)' },
-  { title: 'Plano de tratamento', desc: 'Você recebe um plano claro, com etapas, cuidados e acompanhamento para seguir com mais segurança.', eyebrow: 'Etapa 4', status: 'Planejamento', accent: '#A3155F', accentTint: 'rgba(163,21,95,0.12)' },
+  { title: 'Conversa inicial', desc: 'Você conta o que sente, o que já aconteceu e quais situações mais incomodam.', eyebrow: 'Etapa 1', status: 'Escuta', accent: '#1F8A82', accentTint: 'rgba(31,138,130,0.12)' },
+  { title: 'Exame clínico', desc: 'O profissional verifica a saúde bucal e identifica prioridades reais de cuidado.', eyebrow: 'Etapa 2', status: 'Diagnóstico', accent: '#8FAE3E', accentTint: 'rgba(143,174,62,0.14)' },
+  { title: 'Estratégia de conforto', desc: 'A equipe apresenta anestesia, abordagem gradual ou sedação quando houver indicação.', eyebrow: 'Etapa 3', status: 'Orientação', accent: '#E8B93E', accentTint: 'rgba(232,185,62,0.18)' },
+  { title: 'Próximos passos', desc: 'Você sai com uma sequência clara e acompanhamento para avançar com mais segurança.', eyebrow: 'Etapa 4', status: 'Planejamento', accent: '#A3155F', accentTint: 'rgba(163,21,95,0.12)' },
 ];
 const FAQ_BASE = [
-  { q: 'O que é odontofobia?', a: 'Odontofobia é o medo intenso de ir ao dentista. Pode envolver ansiedade, trauma, receio de dor, vergonha ou experiências negativas anteriores.' },
-  { q: 'Quem tem ansiedade pode fazer tratamento odontológico?', a: 'Sim. A avaliação ajuda a entender seu nível de ansiedade e a planejar uma abordagem mais acolhedora e previsível.' },
-  { q: 'Todo paciente com medo pode fazer sedação?', a: 'Não necessariamente. A sedação depende de avaliação profissional, condição de saúde, tipo de procedimento e necessidade clínica.' },
-  { q: 'Vou fazer o tratamento dormindo?', a: 'Isso não deve ser prometido antes da avaliação. A equipe explica as possibilidades de conforto e sedação disponíveis conforme o seu caso.' },
-  { q: 'Tive uma experiência ruim no dentista. O HOE atende esse tipo de caso?', a: 'Sim. O atendimento considera seu histórico, seus limites e o que pode tornar a consulta mais segura para você.' },
-  { q: 'A primeira consulta já tem procedimento?', a: 'A primeira etapa é a avaliação. Antes de qualquer procedimento, a equipe conversa, examina e explica o plano indicado.' },
+  { q: 'O que é odontofobia?', a: 'É uma reação intensa diante da consulta odontológica. Pode envolver tensão, lembranças ruins, vergonha ou receio de dor.' },
+  { q: 'Quem fica ansioso consegue tratar os dentes?', a: 'Sim. O atendimento pode ser planejado com mais previsibilidade, combinando pausas e explicações antes de cada etapa.' },
+  { q: 'A sedação serve para todos?', a: 'Não necessariamente. A indicação depende da saúde do paciente, do procedimento e da avaliação profissional.' },
+  { q: 'Vou dormir durante o procedimento?', a: 'Isso não deve ser prometido antes da consulta. A equipe apresenta alternativas adequadas depois de entender o caso.' },
+  { q: 'Já tive uma experiência ruim. Ainda posso tentar?', a: 'Sim. O histórico é levado em conta para definir limites, ritmo e recursos que tornem a nova experiência mais segura.' },
+  { q: 'A primeira visita já envolve procedimento?', a: 'Em geral, o início é dedicado a conversa, exame e definição do plano indicado.' },
   { q: 'A clínica atende por convênio ou plano odontológico?', a: 'Não. O HOE atende exclusivamente de forma particular, com planejamento financeiro individual para cada paciente.' },
 ];
 
@@ -709,7 +706,7 @@ class Component extends DCLogic {
 
   renderVals() {
     const s = this.state;
-    const whatsappLink = 'https://wa.me/5571992960598?text=' + encodeURIComponent('Olá, tenho medo de dentista e gostaria de entender as possibilidades de atendimento e sedação.');
+    const whatsappLink = 'https://wa.me/5571992960598?text=' + encodeURIComponent('Olá, vim do Google e gostaria de saber mais sobre sedação.');
 
     const treatments = TREATMENTS_BASE.map((t, i) => ({
       ...t, revealId: 'treat' + i, number: '0' + (i + 1), className: 'treatment-card',
