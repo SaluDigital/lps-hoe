@@ -39,6 +39,13 @@
       #sobre { padding: 72px 20px; }
       .about-shell { grid-template-columns: 1fr; gap: 32px; }
       .about-blob { display: none; }
+      .about-shell { display: flex !important; flex-direction: column; gap: 0; align-items: stretch !important; }
+      .about-copy, .about-body { display: contents !important; }
+      .about-copy > p:first-child { align-self: flex-start; }
+      .about-body > p { margin: 0 0 22px !important; }
+      .about-copy > *, .about-body > p { order: 1; }
+      .about-video { order: 2; width: 100%; margin: 6px 0 32px; }
+      .about-cta { order: 3; padding-top: 0 !important; }
     }
     @keyframes hoe-pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.08); } }
     .treatments-section { position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(247,245,241,0.94) 0%, rgba(255,255,255,0.96) 48%, rgba(238,245,243,0.94) 100%), url('assets/elementos.png') left -70px top -90px/430px auto no-repeat; padding: 96px 24px; }
@@ -166,6 +173,78 @@
     .faq-question-text { font-size: 16px; font-weight: 600; color: #16302E; }
     .faq-icon { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: #E8F2EF; color: #1F8A82; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; }
     .faq-answer { padding: 0 22px 22px; font-size: 14.5px; line-height: 1.65; color: #5a6a68; margin: 0; }
+    .problem-section { position: relative; overflow: hidden; background: #FFFFFF; padding: 92px 24px; }
+    .problem-section::before { content: ''; position: absolute; right: -130px; top: -140px; width: 400px; height: 400px; background: url('assets/elementos.png') center/contain no-repeat; opacity: .1; transform: rotate(12deg); pointer-events: none; }
+    .problem-shell { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; }
+    .problem-head { max-width: 760px; margin: 0 auto 44px; text-align: center; }
+    .problem-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .problem-card { position: relative; overflow: hidden; height: 100%; box-sizing: border-box; display: grid; align-content: start; gap: 12px; background: #fff; border: 1px solid rgba(207,224,220,0.85); border-radius: 12px; padding: 30px 26px 28px; box-shadow: 0 14px 34px rgba(15,59,56,0.07); transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
+    .problem-card::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 4px; background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 20%, #fff)); transform: scaleX(.3); transform-origin: left; transition: transform .5s ease; }
+    .problem-card::after { content: ''; position: absolute; top: -70px; right: -60px; width: 160px; height: 160px; border-radius: 50%; background: var(--tint); transition: transform .6s ease; pointer-events: none; }
+    .problem-card:hover { transform: translateY(-6px); border-color: color-mix(in srgb, var(--accent) 40%, #E7ECE9); box-shadow: 0 26px 52px color-mix(in srgb, var(--accent) 18%, transparent); }
+    .problem-card:hover::before { transform: scaleX(1); }
+    .problem-card:hover::after { transform: scale(1.35); }
+    .problem-card > * { position: relative; z-index: 1; }
+    .problem-num { position: absolute !important; top: 18px; right: 20px; font-size: 12px; font-weight: 800; color: var(--accent); }
+    .problem-icon { width: 48px; height: 48px; color: var(--accent); margin-bottom: 6px; animation: problemFloat 3.2s ease-in-out infinite; animation-delay: var(--delay, 0s); }
+    .problem-icon svg { display: block; width: 48px; height: 48px; transition: transform .35s ease; }
+    .problem-card:hover .problem-icon svg { transform: scale(1.12) rotate(-6deg); }
+    .problem-card h3 { transition: color .3s ease; }
+    .problem-card:hover h3 { color: color-mix(in srgb, var(--accent) 65%, #16302E); }
+    @keyframes problemFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+    @media (prefers-reduced-motion: reduce) { .problem-icon { animation: none; } }
+    .problem-card h3 { font-size: 18px; line-height: 1.25; font-weight: 700; color: #16302E; margin: 0; }
+    .problem-card p { font-size: 15px; line-height: 1.6; color: #4f605e; margin: 0; }
+    .problem-note { max-width: 680px; margin: 40px auto 0; text-align: center; color: #0F3B38; font-size: clamp(20px,2.4vw,26px); line-height: 1.3; font-weight: 800; }
+    .impact-section { position: relative; overflow: hidden; background: linear-gradient(135deg, #0A2C29 0%, #0F3B38 58%, #071F1D 100%); padding: 92px 24px; color: #fff; }
+    .impact-section::before { content: ''; position: absolute; inset: 0; background: url('assets/elementos.png') left -90px bottom -120px/480px auto no-repeat; opacity: .1; pointer-events: none; }
+    .impact-shell { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr); gap: 54px; align-items: center; }
+    .impact-quote { margin: 26px 0 0; border-left: 4px solid #CE167A; padding: 8px 0 8px 20px; }
+    .impact-quote strong { display: block; color: #fff; font-size: clamp(24px,3vw,32px); line-height: 1.15; font-weight: 800; margin-bottom: 8px; }
+    .impact-quote span { color: #CFE0DC; font-size: 15px; line-height: 1.6; }
+    .impact-list { display: grid; gap: 16px; }
+    .impact-item { position: relative; overflow: hidden; display: grid; grid-template-columns: 54px minmax(0,1fr); gap: 18px; align-items: start; padding: 24px 26px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: 8px; box-shadow: 0 18px 42px rgba(0,0,0,0.16); }
+    .impact-item::before { content: ''; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--accent); }
+    .impact-icon { width: 54px; height: 54px; color: var(--accent); display: flex; align-items: flex-start; justify-content: center; }
+    .impact-item h3 { color: #fff; font-size: 19px; line-height: 1.2; font-weight: 700; margin: 4px 0 8px; }
+    .impact-item p { color: #D7E5E1; font-size: 15px; line-height: 1.65; margin: 0; }
+    .safety-section { position: relative; overflow: hidden; background: linear-gradient(135deg, #08201E 0%, #0F3B38 62%, #071A18 100%); padding: 96px 24px; color: #fff; }
+    .safety-section::before { content: ''; position: absolute; inset: 0; background: url('assets/elementos.png') right -80px top -120px/540px auto no-repeat; opacity: .1; pointer-events: none; }
+    .safety-section::after { content: ''; position: absolute; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(153,192,60,0.18), transparent 64%); left: -170px; bottom: -210px; pointer-events: none; }
+    .safety-shell { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr); gap: 54px; align-items: center; }
+    .safety-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+    .safety-card { position: relative; overflow: hidden; padding: 26px 24px; background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); border-radius: 8px; box-shadow: 0 18px 42px rgba(0,0,0,0.16); backdrop-filter: blur(10px); }
+    .safety-card::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 4px; background: var(--accent); }
+    .safety-icon { width: 48px; height: 48px; color: var(--accent); margin-bottom: 14px; }
+    .safety-card h3 { color: #fff; font-size: 19px; line-height: 1.2; font-weight: 700; margin: 0 0 8px; }
+    .safety-card p { color: #D7E5E1; font-size: 15px; line-height: 1.6; margin: 0; }
+    .transform-section { position: relative; overflow: hidden; background: linear-gradient(135deg, #F7F5F1 0%, #FFFFFF 50%, #EEF5F3 100%); padding: 92px 24px; }
+    .transform-section::before { content: ''; position: absolute; width: 420px; height: 420px; border-radius: 50%; background: rgba(153,192,60,0.11); right: -190px; top: -220px; }
+    .transform-shell { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; }
+    .transform-head { max-width: 720px; margin: 0 auto 44px; text-align: center; }
+    .transform-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+    .transform-section::after { content: ''; position: absolute; width: 380px; height: 380px; border-radius: 50%; background: rgba(206,22,122,0.07); left: -170px; bottom: -190px; }
+    .transform-card { position: relative; overflow: hidden; height: 100%; box-sizing: border-box; display: flex; flex-direction: column; background: #fff; border: 1px solid rgba(207,224,220,0.85); border-radius: 12px; padding: 30px 24px 24px; box-shadow: 0 14px 34px rgba(15,59,56,0.07); transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
+    .transform-card::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 4px; background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 20%, #fff)); transform: scaleX(.3); transform-origin: left; transition: transform .5s ease; }
+    .transform-card::after { content: ''; position: absolute; top: -70px; right: -60px; width: 160px; height: 160px; border-radius: 50%; background: var(--tint); transition: transform .6s ease; pointer-events: none; }
+    .transform-card:hover { transform: translateY(-6px); border-color: color-mix(in srgb, var(--accent) 40%, #E7ECE9); box-shadow: 0 26px 52px color-mix(in srgb, var(--accent) 18%, transparent); }
+    .transform-card:hover::before { transform: scaleX(1); }
+    .transform-card:hover::after { transform: scale(1.35); }
+    .transform-num { position: absolute; top: 18px; right: 20px; z-index: 1; font-size: 12px; font-weight: 800; color: var(--accent); }
+    .transform-before { position: relative; z-index: 1; display: flex; gap: 10px; align-items: flex-start; color: #7a8a88; font-size: 14.5px; line-height: 1.5; margin: 0; padding-right: 26px; }
+    .transform-before-text { text-decoration: line-through; text-decoration-color: transparent; transition: text-decoration-color .35s ease; }
+    .transform-card:hover .transform-before-text { text-decoration-color: color-mix(in srgb, var(--accent) 70%, transparent); }
+    .transform-divider { position: relative; z-index: 1; display: flex; justify-content: center; align-items: center; height: 40px; margin: 14px 0; }
+    .transform-divider::before { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 55%, transparent) 50%, transparent); }
+    .transform-arrow { position: relative; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: var(--on, #fff); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 6px #fff, 0 10px 20px color-mix(in srgb, var(--accent) 35%, transparent); animation: transformNudge 2.4s ease-in-out infinite; }
+    .transform-card:hover .transform-arrow { animation-duration: 1s; }
+    @keyframes transformNudge { 0%,100% { transform: translateY(-2px); } 50% { transform: translateY(3px); } }
+    .transform-after { position: relative; z-index: 1; flex: 1; display: flex; gap: 10px; align-items: flex-start; background: var(--tint); border-radius: 10px; padding: 14px 16px; color: #0F3B38; font-size: 16.5px; line-height: 1.4; font-weight: 700; margin: 0; }
+    .transform-tag { flex-shrink: 0; border-radius: 999px; padding: 3px 9px; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+    .transform-before .transform-tag { background: #EFEDE8; color: #7a8a88; }
+    .transform-after .transform-tag { background: var(--accent); color: var(--on, #fff); }
+    @media (prefers-reduced-motion: reduce) { .transform-arrow { animation: none; } }
+    .transform-cta { display: flex; flex-direction: column; align-items: center; text-align: center; margin-top: 40px; }
     @media (max-width: 900px) {
       .treatments-section { padding: 72px 20px; }
       .treatments-shell { display: flex; flex-direction: column; gap: 28px; }
@@ -197,6 +276,21 @@
       .testimonial-cta-video { max-width: 460px; width: 100%; margin: 0 auto; order: 1; }
       .units-section { padding: 72px 20px; }
       .units-grid { grid-template-columns: 1fr; }
+      .problem-section, .impact-section, .safety-section, .transform-section { padding: 72px 20px; }
+      .problem-grid, .transform-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .impact-shell, .safety-shell { grid-template-columns: 1fr; gap: 32px; }
+      .impact-shell { gap: 0; }
+      .impact-copy { display: contents; }
+      .impact-copy > :not(.impact-cta) { order: 1; }
+      .impact-list { order: 2; margin-top: 28px; }
+      .impact-cta { order: 3; margin-top: 32px; }
+      .impact-cta .impact-quote { margin-top: 0; }
+      .safety-shell { gap: 0; }
+      .safety-copy { display: contents; }
+      .safety-copy > :not(.safety-cta) { order: 1; }
+      .safety-grid { order: 2; margin-top: 14px; }
+      .safety-cta { order: 3; margin-top: 32px; }
+      .safety-cta > div { margin-bottom: 22px !important; }
       .steps-section { padding: 68px 20px; }
       .steps-shell { display: flex; flex-direction: column; gap: 26px; }
       .steps-header { display: contents; position: relative; top: auto; min-height: auto; }
@@ -214,6 +308,10 @@
       .treatments-grid { grid-template-columns: 1fr; }
       .treatments-panel-grid { grid-template-columns: 1fr; }
       .authority-item { grid-template-columns: 64px minmax(0,1fr); padding: 22px 20px; }
+      .problem-grid, .transform-grid, .safety-grid { grid-template-columns: 1fr; }
+      .impact-item { grid-template-columns: 46px minmax(0,1fr); gap: 14px; padding: 22px 20px; }
+      .impact-icon { width: 46px; height: 46px; }
+      .impact-icon svg { width: 44px; height: 44px; }
     }
   </style>
 </helmet>
@@ -247,9 +345,9 @@
     <div style="max-width:1200px; margin:0 auto; width:100%;">
       <div class="hero-copy">
         <img data-reveal="heroLogo" style="{{ heroLogoStyle }}" src="assets/logo-hoe.webp" alt="HOE - Hospital de Odontologia Especializada" width="180" height="72" />
-        <h1 data-reveal="heroTitle" style="{{ heroTitleStyle }}">Recupere seus dentes e volte a sorrir, sem sentir nada durante o procedimento.</h1>
-        <p data-reveal="heroSub" style="{{ heroSubStyle }}">Mais de 20 mil sorrisos restaurados em 10+ anos, com a segurança de um hospital odontológico: centro cirúrgico próprio, sedação consciente e anestesista dedicado.</p>
-        <a class="whatsapp-animated" data-reveal="heroBtn" style="{{ heroBtnStyle }}" href="{{ whatsappLink }}" target="_blank" rel="noopener">Clique aqui e transforme seu sorriso</a>
+        <h1 data-reveal="heroTitle" style="{{ heroTitleStyle }}">Volte a sorrir, mastigar e conversar sem medo, com a segurança de um Hospital Odontológico.</h1>
+        <p data-reveal="heroSub" style="{{ heroSubStyle }}">Dentes faltando ou prótese que solta? Nós podemos ajudar, com centro cirúrgico próprio e sedação consciente para você não sentir nada.</p>
+        <a class="whatsapp-animated" data-reveal="heroBtn" style="{{ heroBtnStyle }}" href="{{ whatsappLink }}" target="_blank" rel="noopener">Quero recuperar meu sorriso</a>
       </div>
     </div>
   </header>
@@ -259,12 +357,11 @@
     <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:26px 32px;">
       <div style="display:flex; align-items:center; gap:14px; flex:1 1 220px; min-width:220px;">
         <svg width="34" height="34" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
-          <rect x="2.5" y="4.5" width="19" height="13.5" rx="1.4" stroke="#fff" stroke-width="1.6"/>
-          <path d="M8 22.5h8M12 18v4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
-          <circle cx="23" cy="19" r="5.2" stroke="#fff" stroke-width="1.6"/>
-          <path d="M26.7 22.7L29.5 25.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M5 28.5V9.5a1.5 1.5 0 011.5-1.5h19a1.5 1.5 0 011.5 1.5v19M3 28.5h26" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M16 11.5v7M12.5 15h7" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M13 28.5v-5h6v5" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>
         </svg>
-        <p style="color:#fff; font-size:14px; font-weight:600; line-height:1.4; margin:0;">Tecnologia com scanner intraoral</p>
+        <p style="color:#fff; font-size:14px; font-weight:600; line-height:1.4; margin:0;">Estrutura hospitalar com centro cirúrgico próprio</p>
       </div>
 
       <div style="display:flex; align-items:center; gap:14px; flex:1 1 220px; min-width:220px;">
@@ -283,7 +380,7 @@
           <rect x="12" y="3.5" width="8" height="5" rx="1.3" stroke="#fff" stroke-width="1.6"/>
           <path d="M16 13.5c-2.1 0-3.6 1.7-3.6 4 0 2 .9 3.6 1.4 5.2.3 1 .6 1.9 1.4 1.9.7 0 .8-1 1-1.7.2-.8.4-1.3.8-1.3s.6.5.8 1.3c.2.7.3 1.7 1 1.7.8 0 1.1-.9 1.4-1.9.5-1.6 1.4-3.2 1.4-5.2 0-2.3-1.5-4-3.6-4z" stroke="#fff" stroke-width="1.3" stroke-linejoin="round"/>
         </svg>
-        <p style="color:#fff; font-size:14px; font-weight:600; line-height:1.4; margin:0;">Procedimento personalizado para o seu caso</p>
+        <p style="color:#fff; font-size:14px; font-weight:600; line-height:1.4; margin:0;">Plano personalizado para o seu caso</p>
       </div>
 
       <div style="display:flex; align-items:center; gap:14px; flex:1 1 220px; min-width:220px;">
@@ -297,18 +394,124 @@
     </div>
   </section>
 
-  <!-- TRATAMENTOS -->
+  <!-- PROBLEMA: VOCÊ SE IDENTIFICA? -->
+  <section id="identifica" class="problem-section">
+    <div class="problem-shell">
+      <div class="problem-head">
+        <p class="units-kicker"><span></span>Você se identifica?</p>
+        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(28px,4vw,44px); line-height:1.1; font-weight:700; color:#0F3B38; margin:0 0 18px;">Perder dentes afeta muito mais do que a estética.</h2>
+        <p style="color:#4d625f; font-size:17px; line-height:1.7; margin:0;">Muitas pessoas chegam até nós depois de anos convivendo com situações como estas, quase sempre adiando o tratamento por medo da cirurgia ou do investimento. Se alguma delas faz parte da sua rotina, saiba que existe solução.</p>
+      </div>
+      <div class="problem-grid">
+        <div data-reveal="pb0" style="{{ pb0Style }}">
+        <article class="problem-card" style="--accent:#CE167A; --tint:rgba(206,22,122,0.09); --delay:0.00s;">
+          <span class="problem-num">01</span>
+          <div class="problem-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2.5L5 13.5h6l-1 8 8-11h-6l1-8z"/></svg></div>
+          <h3>Dor ou desconforto ao mastigar</h3>
+          <p>Um dente perdido ou comprometido pode causar dor, sensibilidade e sobrecarregar os outros dentes.</p>
+        </article>
+        </div>
+        <div data-reveal="pb1" style="{{ pb1Style }}">
+        <article class="problem-card" style="--accent:#4A7FB8; --tint:rgba(74,127,184,0.10); --delay:0.35s;">
+          <span class="problem-num">02</span>
+          <div class="problem-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 15.5h7"/><circle cx="9" cy="10" r=".6" fill="currentColor"/><circle cx="15" cy="10" r=".6" fill="currentColor"/></svg></div>
+          <h3>Vergonha de sorrir</h3>
+          <p>Você evita aparecer nas fotos, cobre a boca ao rir ou sente que as pessoas reparam nos seus dentes.</p>
+        </article>
+        </div>
+        <div data-reveal="pb2" style="{{ pb2Style }}">
+        <article class="problem-card" style="--accent:#D9A21F; --tint:rgba(232,185,62,0.16); --delay:0.70s;">
+          <span class="problem-num">03</span>
+          <div class="problem-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M8 3C5.5 3 4 5 4 7.5c0 2.3 1 4 1.6 6 .5 1.8.8 4.5 2.2 4.5 1.2 0 1.3-2 1.6-3.3.3-1.1.6-1.7 1.6-1.7h2c1 0 1.3.6 1.6 1.7.3 1.3.4 3.3 1.6 3.3 1.4 0 1.7-2.7 2.2-4.5.6-2 1.6-3.7 1.6-6C20 5 18.5 3 16 3c-1.6 0-2.6.8-4 .8S9.6 3 8 3z"/></svg></div>
+          <h3>Prótese que solta ou machuca</h3>
+          <p>O medo de a prótese se mexer ao comer, falar ou sorrir, e o incômodo de ter que ajustá-la o tempo todo.</p>
+        </article>
+        </div>
+        <div data-reveal="pb3" style="{{ pb3Style }}">
+        <article class="problem-card" style="--accent:#7FA52A; --tint:rgba(153,192,60,0.14); --delay:1.05s;">
+          <span class="problem-num">04</span>
+          <div class="problem-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v5a2 2 0 004 0V3M7 10v11M17 21V3c-2 1-3.5 3.5-3.5 7v3H17"/></svg></div>
+          <h3>Deixar de comer o que gosta</h3>
+          <p>Carnes, frutas e pães saem do cardápio porque mastigar virou um desafio, e a refeição perde o prazer.</p>
+        </article>
+        </div>
+        <div data-reveal="pb4" style="{{ pb4Style }}">
+        <article class="problem-card" style="--accent:#1F8A82; --tint:rgba(31,138,130,0.10); --delay:1.40s;">
+          <span class="problem-num">05</span>
+          <div class="problem-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M4 5h16v11H10l-6 4V5z"/></svg></div>
+          <h3>Insegurança para conversar</h3>
+          <p>O receio de falar em uma reunião, em uma entrevista ou até com pessoas próximas por causa do sorriso.</p>
+        </article>
+        </div>
+        <div data-reveal="pb5" style="{{ pb5Style }}">
+        <article class="problem-card" style="--accent:#D97957; --tint:rgba(217,121,87,0.12); --delay:1.75s;">
+          <span class="problem-num">06</span>
+          <div class="problem-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>Adiar o tratamento por medo</h3>
+          <p>A vontade de resolver existe, mas o receio de sentir dor ou de passar por uma cirurgia faz você deixar para depois.</p>
+        </article>
+        </div>
+      </div>
+      <p class="problem-note">A boa notícia: tudo isso tem solução, e você não precisa passar por esse processo com medo.</p>
+      <div style="display:flex; justify-content:center; margin-top:24px;">
+        <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24); text-align:center;">Quero resolver isso de vez</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACTO NA VIDA -->
+  <section id="impacto" class="impact-section">
+    <div class="impact-shell">
+      <div class="impact-copy">
+        <div class="authority-kicker"><span></span>O impacto na sua vida</div>
+        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(28px,4vw,44px); line-height:1.08; font-weight:800; color:#fff; margin:22px 0 18px;">Seu sorriso influencia a forma como você <span class="authority-highlight">vive, trabalha e se relaciona</span>.</h2>
+        <p style="color:#D7E5E1; font-size:17px; line-height:1.75; max-width:540px; margin:0;">Quando os dentes não estão bem, o impacto vai muito além da boca. Aos poucos, a pessoa muda hábitos, se retrai e deixa de aproveitar momentos importantes.</p>
+        <div class="impact-cta">
+          <div class="impact-quote">
+            <strong>“A saúde começa pela boca.”</strong>
+            <span>Cuidar do sorriso é cuidar da sua saúde, da sua autoestima e da sua qualidade de vida.</span>
+          </div>
+          <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; margin-top:28px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24); text-align:center;">Quero cuidar da minha saúde bucal</a>
+        </div>
+      </div>
+      <div class="impact-list">
+        <div class="impact-item" style="--accent:#E0489A; --tint:rgba(224,72,154,0.18);">
+          <div class="impact-icon"><svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8.5 7V5.5A1.5 1.5 0 0110 4h4a1.5 1.5 0 011.5 1.5V7M3 12.5h18"/></svg></div>
+          <div>
+            <h3>Na vida profissional</h3>
+            <p>Uma entrevista de emprego, uma reunião ou um atendimento a clientes pedem desenvoltura. Sorrir e falar sem receio ajuda a causar uma boa impressão.</p>
+          </div>
+        </div>
+        <div class="impact-item" style="--accent:#6FA3DB; --tint:rgba(111,163,219,0.18);">
+          <div class="impact-icon"><svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.8 3.2-6 6.5-6s5.9 2.2 6.5 6"/><circle cx="17" cy="9" r="2.6"/><path d="M17.5 14c2.3.3 3.7 2.1 4 4.8"/></svg></div>
+          <div>
+            <h3>Na vida social e afetiva</h3>
+            <p>Encontros com amigos, fotos em família, um novo relacionamento: tudo fica mais leve quando você não precisa esconder o sorriso.</p>
+          </div>
+        </div>
+        <div class="impact-item" style="--accent:#E8B93E; --tint:rgba(232,185,62,0.18);">
+          <div class="impact-icon"><svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0112 7.3a4.3 4.3 0 017.5 2.5C19.5 15.4 12 20 12 20z"/><path d="M7.5 12h2.5l1.2-2 1.6 4 1.2-2h2.5"/></svg></div>
+          <div>
+            <h3>Na sua saúde geral</h3>
+            <p>Mastigar bem favorece a alimentação e a digestão. Já a falta de dentes pode levar à perda óssea na região e sobrecarregar os dentes que restam.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUÇÃO: TRATAMENTOS -->
   <section id="tratamentos" class="treatments-section">
     <div class="treatments-shell">
       <div class="treatments-copy">
         <div>
-          <div class="treatments-kicker"><span></span>Tratamentos sob medida</div>
-          <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,46px); line-height:1.08; font-weight:700; color:#0F3B38; margin:24px 0 18px;">Tipos de tratamento</h2>
-          <p style="color:#4d625f; font-size:17px; line-height:1.7; max-width:420px; margin:0;">Cada sorriso exige uma abordagem própria. Conheça as frentes de tratamento oferecidas pelo HOE com tecnologia, cuidado cirúrgico e reabilitação personalizada.</p>
+          <div class="treatments-kicker"><span></span>A solução para o seu caso</div>
+          <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,46px); line-height:1.08; font-weight:700; color:#0F3B38; margin:24px 0 18px;">Dentes fixos, firmes e com aparência natural.</h2>
+          <p style="color:#4d625f; font-size:17px; line-height:1.7; max-width:420px; margin:0;">O implante dentário substitui a raiz do dente perdido e devolve a firmeza para mastigar, sorrir e falar com naturalidade. Como cada história é diferente, o tratamento começa entendendo a sua situação.</p>
         </div>
         <div class="treatments-cta">
-          <p style="color:#0F3B38; font-size:clamp(24px,3vw,32px); line-height:1.12; font-weight:800; margin:0 0 16px;">Faça seu implante agora!</p>
-          <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Clique aqui para agendar</a>
+          <p style="color:#0F3B38; font-size:clamp(24px,3vw,32px); line-height:1.12; font-weight:800; margin:0 0 16px;">Não sabe qual é o seu caso?</p>
+          <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Quero uma orientação</a>
         </div>
       </div>
       <div class="treatments-grid">
@@ -329,25 +532,39 @@
       </div>
     </div>
   </section>
-  <!-- CTA DEPOIMENTO -->
-  <section class="story-cta-section">
-    <div class="story-cta-shell">
-      <div class="story-cta-copy">
-        <div style="display:inline-flex; align-items:center; gap:9px; color:#DFF0C5; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16); border-radius:999px; padding:8px 12px; font-size:12px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; margin:0 0 20px;"><span style="width:7px; height:7px; border-radius:50%; background:#99C03C; box-shadow:0 0 0 5px rgba(153,192,60,0.18);"></span>História real</div>
-        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,48px); line-height:1.06; font-weight:800; color:#fff; margin:0 0 18px;">O implante pode devolver mais do que dentes: pode devolver confian&ccedil;a.</h2>
-        <p style="color:#D7E5E1; font-size:17px; line-height:1.75; max-width:540px; margin:0 0 18px;">Assista ao depoimento e veja como um tratamento bem planejado transforma mastiga&ccedil;&atilde;o, sorriso e rotina.</p>
-        <p style="color:#fff; font-size:20px; line-height:1.35; font-weight:700; max-width:520px; margin:0 0 24px;">Se voc&ecirc; tamb&eacute;m quer voltar a sorrir com seguran&ccedil;a, fale agora com nossa equipe.</p>
-        <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Quero transformar meu sorriso</a>
+  <!-- SEGURANÇA HOSPITALAR -->
+  <section id="seguranca" class="safety-section">
+    <div class="safety-shell">
+      <div class="safety-copy">
+        <div class="authority-kicker"><span></span>Segurança hospitalar</div>
+        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(28px,4vw,44px); line-height:1.08; font-weight:800; color:#fff; margin:22px 0 18px;">Faça seu implante dentário com a segurança de um <span class="authority-highlight">Hospital Odontológico</span>.</h2>
+        <p style="color:#D7E5E1; font-size:17px; line-height:1.75; max-width:540px; margin:0 0 18px;">Sabemos que o medo da cirurgia é um dos principais motivos para adiar o tratamento. Por isso, o HOE foi estruturado como um hospital: para você se sentir acolhido e amparado do começo ao fim.</p>
+        <div class="safety-cta">
+          <div style="border-left:4px solid #99C03C; padding:12px 0 12px 18px; color:#F2F7F5; font-size:15px; line-height:1.65; max-width:520px; margin:0 0 26px;">Equipe multidisciplinar preparada para casos simples e complexos, com protocolos rigorosos em todo o atendimento.</div>
+          <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Quero fazer meu implante com segurança</a>
+        </div>
       </div>
-      <div class="story-cta-video">
-        <sc-if value="{{ !storyVideoOpen }}" hint-placeholder-val="{{ true }}">
-          <button class="story-cta-cover" onClick="{{ playStoryVideo }}" aria-label="Reproduzir depoimento">
-            <span class="story-cta-play"><span></span></span>
-          </button>
-        </sc-if>
-        <sc-if value="{{ storyVideoOpen }}" hint-placeholder-val="{{ false }}">
-          <video src="assets/paciente2.mp4" controls autoplay playsinline></video>
-        </sc-if>
+      <div class="safety-grid">
+        <div class="safety-card" style="--accent:#99C03C;">
+          <svg class="safety-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 42V14a2 2 0 012-2h26a2 2 0 012 2v28M5 42h38"/><path d="M24 17v10M19 22h10"/><path d="M19 42v-7h10v7"/></svg>
+          <h3>Centro cirúrgico próprio</h3>
+          <p>Estrutura completa e ambiente controlado, pensados exclusivamente para procedimentos cirúrgicos.</p>
+        </div>
+        <div class="safety-card" style="--accent:#CE167A;">
+          <svg class="safety-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6v12a8 8 0 0016 0V6"/><path d="M22 26v6a8 8 0 0016 0v-4"/><circle cx="38" cy="24" r="4"/></svg>
+          <h3>Anestesista dedicado</h3>
+          <p>Um anestesista acompanha o seu bem-estar durante todo o procedimento cirúrgico.</p>
+        </div>
+        <div class="safety-card" style="--accent:#4A7FB8;">
+          <svg class="safety-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M38 29A15 15 0 1119 10a12 12 0 0019 19z"/></svg>
+          <h3>Sedação consciente</h3>
+          <p>Você permanece relaxado e confortável durante toda a cirurgia. O receio deixa de ser um obstáculo.</p>
+        </div>
+        <div class="safety-card" style="--accent:#E8B93E;">
+          <svg class="safety-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="11" y="8" width="26" height="34" rx="3"/><path d="M18 5h12v6H18zM17 26l5 5 9-10"/></svg>
+          <h3>Planejamento digital</h3>
+          <p>Exames de imagem e scanner intraoral para definir o melhor caminho para o seu caso antes de começar.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -355,15 +572,15 @@
   <section id="etapas" class="steps-section">
     <div class="steps-shell">
       <div class="steps-header">
-        <div class="steps-kicker"><span></span>Protocolo completo</div>
-        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,44px); line-height:1.08; font-weight:700; color:#0F3B38; margin:22px 0 16px;">Etapas do tratamento</h2>
-        <p style="color:#4d625f; font-size:16px; line-height:1.7; max-width:430px; margin:0;">Uma jornada objetiva, planejada e acompanhada de perto para recuperar fun&ccedil;&atilde;o, seguran&ccedil;a e naturalidade.</p>
+        <div class="steps-kicker"><span></span>Como funciona</div>
+        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,44px); line-height:1.08; font-weight:700; color:#0F3B38; margin:22px 0 16px;">Você sabe exatamente o que esperar.</h2>
+        <p style="color:#4d625f; font-size:16px; line-height:1.7; max-width:430px; margin:0;">Um caminho claro e bem definido, para voc&ecirc; viver o tratamento com leveza e previsibilidade.</p>
         <div class="steps-summary">
-          <strong style="display:block; color:#0F3B38; font-size:20px; line-height:1.2; margin-bottom:6px;">7 fases conectadas</strong>
-          <span>Do diagn&oacute;stico inicial &agrave; manuten&ccedil;&atilde;o do resultado, cada decis&atilde;o segue um plano individual.</span>
+          <strong style="display:block; color:#0F3B38; font-size:20px; line-height:1.2; margin-bottom:6px;">Ao seu lado do in&iacute;cio ao fim</strong>
+          <span>Da primeira conversa at&eacute; o sorriso pronto, nossa equipe est&aacute; presente em cada passo.</span>
         </div>
         <div class="steps-cta">
-          <p style="color:#0F3B38; font-size:clamp(24px,3vw,30px); line-height:1.12; font-weight:800; margin:0 0 16px;">Quer saber mais?</p>
+          <p style="color:#0F3B38; font-size:clamp(24px,3vw,30px); line-height:1.12; font-weight:800; margin:0 0 16px;">Ficou com alguma d&uacute;vida?</p>
           <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Fale com nossa equipe</a>
         </div>
       </div>
@@ -397,8 +614,8 @@
       </div>
       <div>
         <div style="display:inline-flex; align-items:center; gap:9px; color:#DFF0C5; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16); border-radius:999px; padding:8px 12px; font-size:12px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; margin:0 0 20px;"><span style="width:7px; height:7px; border-radius:50%; background:#99C03C; box-shadow:0 0 0 5px rgba(153,192,60,0.18);"></span>Depoimento real</div>
-        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,46px); line-height:1.08; font-weight:800; color:#fff; margin:0 0 18px;">Seu novo sorriso pode come&ccedil;ar com uma conversa.</h2>
-        <p style="color:#D7E5E1; font-size:17px; line-height:1.75; max-width:540px; margin:0 0 18px;">Veja como o implante dent&aacute;rio ajudou a recuperar seguran&ccedil;a, conforto e vontade de sorrir sem medo.</p>
+        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,46px); line-height:1.08; font-weight:800; color:#fff; margin:0 0 18px;">Quem j&aacute; passou por isso <span class="authority-highlight">conta como foi</span>.</h2>
+        <p style="color:#D7E5E1; font-size:17px; line-height:1.75; max-width:540px; margin:0 0 18px;">Muitos pacientes chegaram com o mesmo receio que voc&ecirc;. Veja como o implante devolveu firmeza ao mastigar, conforto e a vontade de sorrir outra vez.</p>
         <p style="color:#fff; font-size:20px; line-height:1.35; font-weight:800; max-width:520px; margin:0 0 24px;">Agende sua avalia&ccedil;&atilde;o e descubra o plano ideal para o seu caso.</p>
         <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Quero agendar minha avalia&ccedil;&atilde;o</a>
       </div>
@@ -408,21 +625,19 @@
   <section id="sobre" style="position:relative; overflow:hidden; background:linear-gradient(135deg, rgba(255,255,255,0.97) 0%, rgba(247,245,241,0.94) 48%, rgba(238,245,243,0.94) 100%), url('assets/elementos.png') right -90px top -110px/420px auto no-repeat; padding:96px 24px;">
     <div class="about-blob" style="position:absolute; left:-130px; bottom:-150px; width:390px; height:390px; background:url('assets/elementos.png') center/contain no-repeat; opacity:.13; transform:rotate(-16deg); pointer-events:none;"></div>
     <div class="about-shell" style="position:relative; z-index:1; max-width:1200px; margin:0 auto; align-items:center;">
-      <div data-reveal="aboutText" style="{{ aboutTextStyle }}">
+      <div class="about-copy" data-reveal="aboutText" style="{{ aboutTextStyle }}">
         <p style="display:inline-flex; align-items:center; gap:9px; color:#1F8A82; background:#E8F2EF; border:1px solid #D4E6E2; border-radius:999px; padding:8px 12px; font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin:0 0 18px;"><span style="width:7px; height:7px; border-radius:50%; background:#99C03C; box-shadow:0 0 0 5px rgba(153,192,60,0.16);"></span>Hospital odontológico</p>
-        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,44px); line-height:1.08; font-weight:700; color:#0F3B38; margin:0 0 24px;">Sobre a clínica</h2>
-        <div style="display:grid; gap:22px; color:#314744; font-size:16px; line-height:1.8;">
+        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,44px); line-height:1.08; font-weight:700; color:#0F3B38; margin:0 0 24px;">Um hospital odontológico pensado para acolher você.</h2>
+        <div class="about-body" style="display:grid; gap:22px; color:#314744; font-size:16px; line-height:1.8;">
           <p style="margin:0;">O <strong style="color:#0F3B38;">HOE — Hospital de Odontologia Especializada</strong> nasceu para levar à odontologia o mesmo padrão de <u style="text-decoration-color:#99C03C; text-decoration-thickness:3px; text-underline-offset:4px;">rigor técnico</u>, planejamento e cuidado clínico de um hospital especializado.</p>
-          <p style="margin:0;">Aqui, cada decisão é pensada com calma: do <mark style="background:#EEF5F3; color:#0F3B38; padding:2px 6px; border-radius:4px;">diagnóstico detalhado</mark> ao plano individual para recuperar função, estética e segurança ao sorrir.</p>
-          <p style="margin:0;"><em style="color:#1F8A82; font-style:italic;">Nossa equipe é dedicada a implantodontia e reabilitação oral</em>, atendendo pacientes nas unidades Pituba e Shopping Paralela, em Salvador.</p>
-          <div style="padding-top:4px;">
-            <p style="color:#0F3B38; font-size:clamp(23px,2.6vw,30px); line-height:1.16; font-weight:800; margin:0 0 14px;">Descubra se o implante é indicado para o seu caso.</p>
-            <p style="color:#4d625f; font-size:16px; line-height:1.6; margin:0 0 18px;">Converse com nossa equipe e receba uma orientação inicial para dar o próximo passo com confiança.</p>
+          <p style="margin:0;">Aqui, você é ouvido com atenção: do <mark style="background:#EEF5F3; color:#0F3B38; padding:2px 6px; border-radius:4px;">diagnóstico detalhado</mark> ao plano individual, cada decisão é pensada para devolver função, estética e bem-estar ao seu sorriso.</p>
+          <div class="about-cta" style="padding-top:4px;">
+            <p style="color:#0F3B38; font-size:clamp(23px,2.6vw,30px); line-height:1.16; font-weight:800; margin:0 0 18px;">Converse com nossa equipe e receba uma orientação profissional.</p>
             <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Quero avaliar meu caso</a>
           </div>
         </div>
       </div>
-      <div data-reveal="aboutImg" style="{{ aboutImgStyle }}">
+      <div class="about-video" data-reveal="aboutImg" style="{{ aboutImgStyle }}">
         <sc-if value="{{ !videoOpen }}" hint-placeholder-val="{{ true }}">
           <button onClick="{{ playAboutVideo }}" aria-label="Reproduzir vídeo" style="position:absolute; inset:0; width:100%; height:100%; border:0; padding:0; cursor:pointer; background:url('assets/capa-video.jpg') center/cover no-repeat;">
             <span style="position:absolute; inset:0; background:linear-gradient(135deg, rgba(8,28,26,0.18), rgba(8,28,26,0.48));"></span>
@@ -441,14 +656,14 @@
   <section id="autoridade" class="authority-section">
     <div class="authority-shell">
       <div class="authority-copy">
-        <div class="authority-kicker"><span></span>Excel&ecirc;ncia em implantodontia</div>
+        <div class="authority-kicker"><span></span>Confian&ccedil;a comprovada</div>
         <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,48px); line-height:1.06; font-weight:800; color:#fff; margin:0;">O HOE &eacute; refer&ecirc;ncia em <span class="authority-highlight">implante dent&aacute;rio</span> na Bahia.</h2>
-        <p style="color:#D7E5E1; font-size:17px; line-height:1.75; max-width:560px; margin:0;">Aqui, tecnologia e protocolo hospitalar trabalham juntos. Cada caso &eacute; avaliado com recursos modernos, conduzido por especialistas e acompanhado com o cuidado de quem entende que mastigar, sorrir e falar com seguran&ccedil;a muda a rotina de uma pessoa.</p>
+        <p style="color:#D7E5E1; font-size:17px; line-height:1.75; max-width:560px; margin:0;">Aqui, tecnologia e protocolo hospitalar trabalham juntos. Cada caso &eacute; avaliado com recursos modernos e tratado por especialistas que entendem o quanto um sorriso saud&aacute;vel transforma o dia a dia de uma pessoa.</p>
         <div style="border-left:4px solid #99C03C; padding:14px 0 14px 18px; color:#F2F7F5; font-size:15px; line-height:1.65; max-width:520px;">Centro cir&uacute;rgico pr&oacute;prio, equipe multidisciplinar e experi&ecirc;ncia em casos simples e complexos.</div>
         <div class="authority-cta">
-          <p style="color:#fff; font-size:clamp(22px,2.6vw,30px); line-height:1.16; font-weight:800; margin:0 0 12px;">D&ecirc; hoje o primeiro passo para voltar a sorrir com seguran&ccedil;a.</p>
+          <p style="color:#fff; font-size:clamp(22px,2.6vw,30px); line-height:1.16; font-weight:800; margin:0 0 12px;">Seu novo sorriso come&ccedil;a com uma avalia&ccedil;&atilde;o.</p>
           <p style="color:#CFE0DC; font-size:16px; line-height:1.6; max-width:520px; margin:0 0 18px;">Fale com nossa equipe e descubra o melhor caminho para o seu implante.</p>
-          <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Clique aqui e fale conosco</a>
+          <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Falar com um especialista</a>
         </div>
       </div>
       <div class="authority-proof">
@@ -487,24 +702,52 @@
       </div>
     </div>
   </section>
-  <!-- DEPOIMENTOS EM VIDEO -->
-  <section id="depoimentos-video" class="video-testimonials-section">
-    <div class="testimonial-cta-shell">
-      <div class="testimonial-cta-copy">
-        <div class="steps-kicker"><span></span>Hist&oacute;ria real</div>
-        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,46px); line-height:1.08; font-weight:800; color:#0F3B38; margin:22px 0 18px;">Voltar a sorrir com seguran&ccedil;a pode mudar a sua rotina.</h2>
-        <p style="color:#4d625f; font-size:17px; line-height:1.75; max-width:540px; margin:0 0 18px;">Assista a este depoimento e veja como um tratamento planejado pode devolver conforto, autoestima e confian&ccedil;a para sorrir todos os dias.</p>
-        <p style="color:#0F3B38; font-size:20px; line-height:1.35; font-weight:800; max-width:520px; margin:0 0 24px;">O pr&oacute;ximo sorriso transformado pode ser o seu.</p>
-        <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Quero come&ccedil;ar minha transforma&ccedil;&atilde;o</a>
+  <!-- TRANSFORMAÇÃO -->
+  <section id="transformacao" class="transform-section">
+    <div class="transform-shell">
+      <div class="transform-head">
+        <p class="units-kicker"><span></span>A transformação</p>
+        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(28px,4vw,44px); line-height:1.1; font-weight:700; color:#0F3B38; margin:0 0 18px;">Imagine a sua rotina depois do tratamento.</h2>
+        <p style="color:#4d625f; font-size:17px; line-height:1.7; margin:0;">Mais do que repor dentes, o implante devolve a liberdade de viver sem pensar o tempo todo no próprio sorriso.</p>
       </div>
-      <div class="testimonial-cta-video">
-        <sc-if value="{{ !testimonialCtaVideoOpen }}" hint-placeholder-val="{{ true }}">
-          <button class="testimonial-cta-cover" onClick="{{ playTestimonialCtaVideo }}" aria-label="Reproduzir depoimento">
+      <div class="transform-grid">
+        <sc-for list="{{ transforms }}" as="tf" hint-placeholder-count="6">
+          <div data-reveal="{{ tf.revealId }}" style="{{ tf.style }}">
+            <article class="transform-card" style="{{ tf.cardStyle }}">
+              <span class="transform-num">{{ tf.number }}</span>
+              <p class="transform-before"><span class="transform-tag">Antes</span><span class="transform-before-text">{{ tf.before }}</span></p>
+              <div class="transform-divider">
+                <span class="transform-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
+              </div>
+              <p class="transform-after"><span class="transform-tag">Depois</span>{{ tf.after }}</p>
+            </article>
+          </div>
+        </sc-for>
+      </div>
+      <div class="transform-cta">
+        <p style="color:#0F3B38; font-size:clamp(22px,2.8vw,30px); line-height:1.16; font-weight:800; margin:0 0 16px;">Esse pode ser o seu próximo capítulo.</p>
+        <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Quero começar minha transformação</a>
+      </div>
+    </div>
+  </section>
+  <!-- CTA DEPOIMENTO -->
+  <section class="story-cta-section">
+    <div class="story-cta-shell">
+      <div class="story-cta-copy">
+        <div style="display:inline-flex; align-items:center; gap:9px; color:#DFF0C5; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16); border-radius:999px; padding:8px 12px; font-size:12px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; margin:0 0 20px;"><span style="width:7px; height:7px; border-radius:50%; background:#99C03C; box-shadow:0 0 0 5px rgba(153,192,60,0.18);"></span>História real</div>
+        <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(30px,4vw,48px); line-height:1.06; font-weight:800; color:#fff; margin:0 0 18px;">O implante pode devolver mais do que dentes: pode <span class="authority-highlight">devolver confian&ccedil;a</span>.</h2>
+        <p style="color:#D7E5E1; font-size:17px; line-height:1.75; max-width:540px; margin:0 0 18px;">Assista ao depoimento e veja como a vida muda quando voc&ecirc; volta a mastigar, sorrir e conversar sem preocupa&ccedil;&atilde;o.</p>
+        <p style="color:#fff; font-size:20px; line-height:1.35; font-weight:700; max-width:520px; margin:0 0 24px;">Se voc&ecirc; tamb&eacute;m quer viver essa mudan&ccedil;a, fale agora com nossa equipe.</p>
+        <a class="whatsapp-animated" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; background:#99C03C; color:#0F3B38; text-decoration:none; border-radius:6px; font-size:16px; font-weight:800; padding:0 28px; box-shadow:0 14px 30px rgba(153,192,60,0.24);">Quero transformar meu sorriso</a>
+      </div>
+      <div class="story-cta-video">
+        <sc-if value="{{ !storyVideoOpen }}" hint-placeholder-val="{{ true }}">
+          <button class="story-cta-cover" onClick="{{ playStoryVideo }}" aria-label="Reproduzir depoimento">
             <span class="story-cta-play"><span></span></span>
           </button>
         </sc-if>
-        <sc-if value="{{ testimonialCtaVideoOpen }}" hint-placeholder-val="{{ false }}">
-          <video src="assets/paciente3.mp4" controls autoplay playsinline></video>
+        <sc-if value="{{ storyVideoOpen }}" hint-placeholder-val="{{ false }}">
+          <video src="assets/paciente2.mp4" controls autoplay playsinline></video>
         </sc-if>
       </div>
     </div>
@@ -551,7 +794,7 @@
         <h2 style="font-family:'Work Sans',sans-serif; font-size:clamp(26px,3.5vw,34px); font-weight:700; color:#0F3B38; margin:0;">Perguntas frequentes</h2>
       </div>
       <div class="faq-list">
-        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="7">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="9">
           <div class="faq-item" data-reveal="{{ f.revealId }}" style="{{ f.style }}">
             <button class="faq-question" onClick="{{ f.toggle }}">
               <span class="faq-question-text">{{ f.q }}</span>
@@ -570,9 +813,9 @@
   <section id="cta-2" style="background:linear-gradient(90deg, rgba(8,26,24,0.25) 0%, rgba(8,26,24,0.6) 55%, rgba(8,26,24,0.93) 100%), url('assets/call-final.webp') 68% center/cover no-repeat; padding:190px 24px;">
     <div data-reveal="cta2" class="cta2-shell" style="{{ cta2Style }}">
       <div class="cta2-copy">
-        <h2 class="cta2-title" style="font-family:'Work Sans',sans-serif; font-weight:600; color:#fff; margin:0 0 14px;">Ainda com dúvidas? Fale agora com nossa equipe.</h2>
-        <p style="color:#cfe0dc; font-size:16px; margin:0 0 26px;">Atendimento pelo WhatsApp, com resposta rápida.</p>
-        <a class="whatsapp-animated" style="display:inline-block; background:#99C03C; color:#0F3B38; text-decoration:none; padding:14px 28px; border-radius:4px; font-size:16px; font-weight:700;" href="{{ whatsappLink }}" target="_blank" rel="noopener">Quero tirar minhas dúvidas agora</a>
+        <h2 class="cta2-title" style="font-family:'Work Sans',sans-serif; font-weight:600; color:#fff; margin:0 0 14px;">Dê hoje o primeiro passo para voltar a <span class="authority-highlight">sorrir sem medo</span>.</h2>
+        <p style="color:#cfe0dc; font-size:16px; margin:0 0 26px;">Fale com nossa equipe pelo WhatsApp e tire suas dúvidas com quem entende do seu caso.</p>
+        <a class="whatsapp-animated" style="display:inline-block; background:#99C03C; color:#0F3B38; text-decoration:none; padding:14px 28px; border-radius:4px; font-size:16px; font-weight:700;" href="{{ whatsappLink }}" target="_blank" rel="noopener">Sim, quero cuidar do meu sorriso</a>
       </div>
     </div>
   </section>
@@ -630,22 +873,32 @@ const TESTIMONIALS = [
 ];
 
 const TREATMENTS_BASE = [
-  { title: 'Implantes unitários', desc: 'Substituição de um único dente perdido, devolvendo função e estética sem comprometer os dentes vizinhos.', eyebrow: 'Reposição pontual', metaA: 'Estética natural', metaB: 'Preserva dentes vizinhos', accent: '#4A7FB8', accentTint: 'rgba(74,127,184,0.12)', icon: 'unit' },
-  { title: 'Implantes múltiplos', desc: 'Reposição de vários dentes em uma mesma arcada, com planejamento cirúrgico individualizado.', eyebrow: 'Arcadas parciais', metaA: 'Mapa cirúrgico', metaB: 'Etapas coordenadas', accent: '#8FAE3E', accentTint: 'rgba(143,174,62,0.14)', icon: 'multi' },
-  { title: 'Próteses sobre implantes', desc: 'Estruturas fixas ou removíveis ancoradas em implantes, para maior estabilidade ao mastigar e falar.', eyebrow: 'Mais estabilidade', metaA: 'Mastigação segura', metaB: 'Prótese planejada', accent: '#E8B93E', accentTint: 'rgba(232,185,62,0.18)', icon: 'bridge' },
-  { title: 'Reabilitação oral completa', desc: 'Tratamento para pacientes com perda dentária extensa, recuperando a função de toda a arcada.', eyebrow: 'Reconstrução ampla', metaA: 'Função da arcada', metaB: 'Plano completo', accent: '#A3155F', accentTint: 'rgba(163,21,95,0.12)', icon: 'arch' },
+  { title: 'Implante unitário', desc: 'Repõe apenas o dente que falta, com aparência natural e sem desgastar os dentes vizinhos.', eyebrow: '“Perdi um dente”', metaA: 'Sorriso completo de novo', metaB: 'Aparência natural', accent: '#4A7FB8', accentTint: 'rgba(74,127,184,0.12)', icon: 'unit' },
+  { title: 'Implantes múltiplos', desc: 'Devolve os dentes perdidos de uma mesma região para você voltar a mastigar dos dois lados com conforto.', eyebrow: '“Perdi alguns dentes”', metaA: 'Mastigação equilibrada', metaB: 'Plano individual', accent: '#8FAE3E', accentTint: 'rgba(143,174,62,0.14)', icon: 'multi' },
+  { title: 'Prótese sobre implante', desc: 'A prótese fica presa aos implantes: acaba o medo de ela se mexer ao comer, falar ou sorrir.', eyebrow: '“Minha prótese solta”', metaA: 'Firmeza ao mastigar', metaB: 'Fim do incômodo', accent: '#E8B93E', accentTint: 'rgba(232,185,62,0.18)', icon: 'bridge' },
+  { title: 'Reabilitação oral completa', desc: 'Um plano completo para recuperar a arcada inteira e voltar a comer, sorrir e conversar sem restrições.', eyebrow: '“Perdi muitos dentes”', metaA: 'Dentes fixos', metaB: 'Qualidade de vida', accent: '#A3155F', accentTint: 'rgba(163,21,95,0.12)', icon: 'arch' },
 ];
 const STEPS_BASE = [
-  { title: 'Avaliação', desc: 'Consulta inicial para entender o caso e o histórico do paciente.', eyebrow: 'Primeiro contato', status: 'Escuta clínica', accent: '#1F8A82', accentTint: 'rgba(31,138,130,0.12)' },
-  { title: 'Exames', desc: 'Imagens e exames complementares para diagnóstico preciso.', eyebrow: 'Diagnóstico digital', status: 'Mapeamento', accent: '#4A7FB8', accentTint: 'rgba(74,127,184,0.12)' },
-  { title: 'Planejamento', desc: 'Definição da técnica e sequência cirúrgica adequadas ao caso.', eyebrow: 'Estratégia clínica', status: 'Plano 1:1', accent: '#8FAE3E', accentTint: 'rgba(143,174,62,0.14)' },
-  { title: 'Procedimento cirúrgico', desc: 'Instalação dos implantes conforme o planejamento definido.', eyebrow: 'Execução segura', status: 'Centro cirúrgico', accent: '#E8B93E', accentTint: 'rgba(232,185,62,0.18)' },
-  { title: 'Período de recuperação', desc: 'Acompanhamento da cicatrização e integração óssea.', eyebrow: 'Cicatrização assistida', status: 'Retornos guiados', accent: '#A3155F', accentTint: 'rgba(163,21,95,0.12)' },
-  { title: 'Etapa protética', desc: 'Confecção e instalação da prótese sobre os implantes.', eyebrow: 'Sorriso em função', status: 'Prótese final', accent: '#D97957', accentTint: 'rgba(217,121,87,0.13)' },
-  { title: 'Acompanhamento', desc: 'Consultas de manutenção para garantir a saúde a longo prazo.', eyebrow: 'Cuidado contínuo', status: 'Longo prazo', accent: '#0F3B38', accentTint: 'rgba(15,59,56,0.10)' },
+  { title: 'Avaliação', desc: 'Ouvimos suas queixas, seu histórico e o que você espera do tratamento.', eyebrow: 'Primeiro contato', status: 'Escuta acolhedora', accent: '#1F8A82', accentTint: 'rgba(31,138,130,0.12)' },
+  { title: 'Exames', desc: 'Exames de imagem mostram com precisão a sua estrutura óssea e bucal.', eyebrow: 'Diagnóstico preciso', status: 'Imagem detalhada', accent: '#4A7FB8', accentTint: 'rgba(74,127,184,0.12)' },
+  { title: 'Planejamento', desc: 'Você conhece o plano, as etapas e o investimento antes de decidir.', eyebrow: 'Plano sob medida', status: 'Previsibilidade', accent: '#8FAE3E', accentTint: 'rgba(143,174,62,0.14)' },
+  { title: 'Cirurgia', desc: 'Os implantes são instalados no centro cirúrgico, com sedação consciente e anestesista presente.', eyebrow: 'Estrutura hospitalar', status: 'Conforto do início ao fim', accent: '#E8B93E', accentTint: 'rgba(232,185,62,0.18)' },
+  { title: 'Recuperação', desc: 'Monitoramos sua cicatrização de perto, com orientações claras e retornos programados.', eyebrow: 'Cuidado próximo', status: 'Retornos guiados', accent: '#A3155F', accentTint: 'rgba(163,21,95,0.12)' },
+  { title: 'Seu novo sorriso', desc: 'Instalação dos dentes definitivos sobre os implantes, com aparência natural.', eyebrow: 'A transformação', status: 'Prótese final', accent: '#D97957', accentTint: 'rgba(217,121,87,0.13)' },
+  { title: 'Acompanhamento', desc: 'Consultas de manutenção para o seu sorriso continuar saudável por muitos anos.', eyebrow: 'Cuidado contínuo', status: 'Longo prazo', accent: '#0F3B38', accentTint: 'rgba(15,59,56,0.10)' },
+];
+const TRANSFORMS_BASE = [
+  { before: 'Escolher o que comer pelo que consegue mastigar.', after: 'Voltar a comer o que gosta, com prazer.', accent: '#CE167A', tint: 'rgba(206,22,122,0.09)', on: '#fff' },
+  { before: 'Esconder o sorriso nas fotos e cobrir a boca ao rir.', after: 'Sorrir à vontade, em qualquer momento.', accent: '#4A7FB8', tint: 'rgba(74,127,184,0.10)', on: '#fff' },
+  { before: 'Prótese que se mexe na hora de comer ou falar.', after: 'Dentes fixos e firmes, sem preocupação.', accent: '#E8B93E', tint: 'rgba(232,185,62,0.16)', on: '#0F3B38' },
+  { before: 'Evitar falar em reuniões e entrevistas.', after: 'Participar de reuniões e encontros sem receio.', accent: '#7FA52A', tint: 'rgba(153,192,60,0.14)', on: '#fff' },
+  { before: 'Conviver com dor e desconforto no dia a dia.', after: 'Mais saúde e bem-estar no dia a dia.', accent: '#1F8A82', tint: 'rgba(31,138,130,0.10)', on: '#fff' },
+  { before: 'Deixar o problema para depois, ano após ano.', after: 'Tratamento concluído com conforto e estrutura hospitalar.', accent: '#D97957', tint: 'rgba(217,121,87,0.12)', on: '#fff' },
 ];
 const FAQ_BASE = [
-  { q: 'Implantar dente dói?', a: 'O procedimento é realizado com anestesia local e a maioria dos pacientes relata desconforto leve no pós-operatório, controlado com medicação prescrita pela equipe.' },
+  { q: 'Tenho medo da cirurgia. Vou sentir dor?', a: 'Durante o procedimento, não. A cirurgia é feita no nosso centro cirúrgico, com anestesia e, quando indicado, sedação consciente acompanhada por anestesista. No pós-operatório, a maioria dos pacientes relata apenas um desconforto leve, controlado com a medicação prescrita pela equipe.' },
+  { q: 'O implante cabe no meu orçamento?', a: 'Cada caso tem um plano próprio. Na avaliação, você conhece o tratamento indicado, as etapas e o investimento, com planejamento financeiro individual para decidir com clareza.' },
+  { q: 'Quanto tempo dura um implante?', a: 'Com boa higiene e consultas de acompanhamento, o implante é uma solução duradoura, pensada para acompanhar você por muitos anos. Trabalhamos com implantes com garantia, das melhores marcas do mercado.' },
   { q: 'Quanto tempo dura o tratamento?', a: 'Varia conforme o caso, podendo levar de poucos meses a mais de um ano em reabilitações mais extensas, incluindo a integração óssea do implante.' },
   { q: 'Existe idade limite para fazer implante?', a: 'Não há um limite máximo de idade. O que determina a indicação é a saúde bucal e geral do paciente, avaliada individualmente.' },
   { q: 'Quais os cuidados após a cirurgia?', a: 'Orientações incluem alimentação adequada, higiene bucal cuidadosa e repouso nos primeiros dias, conforme prescrição da equipe.' },
@@ -655,7 +908,7 @@ const FAQ_BASE = [
 ];
 
 class Component extends DCLogic {
-  state = { visible: {}, popupOpen: true, testimonialIndex: 0, openFaq: null, videoOpen: false, storyVideoOpen: false, ctaVideoOpen: false, testimonialCtaVideoOpen: false, openPatientVideo: null };
+  state = { visible: {}, popupOpen: true, testimonialIndex: 0, openFaq: null, videoOpen: false, storyVideoOpen: false, ctaVideoOpen: false, openPatientVideo: null };
 
   setRootRef = (el) => { this.root = el; };
 
@@ -692,7 +945,6 @@ class Component extends DCLogic {
   playAboutVideo = () => this.setState({ videoOpen: true });
   playStoryVideo = () => this.setState({ storyVideoOpen: true });
   playCtaVideo = () => this.setState({ ctaVideoOpen: true });
-  playTestimonialCtaVideo = () => this.setState({ testimonialCtaVideoOpen: true });
   playPatientVideo = (id) => this.setState({ openPatientVideo: id });
   toggleFaq = (i) => this.setState((s) => ({ openFaq: s.openFaq === i ? null : i }));
   prevTestimonial = () => this.setState((s) => ({ testimonialIndex: (s.testimonialIndex - 1 + TESTIMONIALS.length) % TESTIMONIALS.length }));
@@ -739,6 +991,12 @@ class Component extends DCLogic {
       style: this.reveal('videoTesti' + i, 'translateY(22px)', i * 0.08),
     }));
 
+    const transforms = TRANSFORMS_BASE.map((tf, i) => ({
+      ...tf, number: '0' + (i + 1), revealId: 'tf' + i,
+      style: { ...this.reveal('tf' + i, 'translateY(26px)', i * 0.08), height: '100%' },
+      cardStyle: { '--accent': tf.accent, '--tint': tf.tint, '--on': tf.on },
+    }));
+
     const faqs = FAQ_BASE.map((f, i) => ({
       ...f, revealId: 'faq' + i, open: s.openFaq === i, icon: s.openFaq === i ? '\u2212' : '+',
       toggle: () => this.toggleFaq(i),
@@ -762,8 +1020,6 @@ class Component extends DCLogic {
       playStoryVideo: this.playStoryVideo,
       ctaVideoOpen: s.ctaVideoOpen,
       playCtaVideo: this.playCtaVideo,
-      testimonialCtaVideoOpen: s.testimonialCtaVideoOpen,
-      playTestimonialCtaVideo: this.playTestimonialCtaVideo,
       heroLogoStyle: this.reveal('heroLogo', 'translateY(16px)', 0),
       heroTitleStyle: { ...this.reveal('heroTitle', 'translateY(24px)', 0.15), fontFamily: "'Work Sans', sans-serif", color: '#fff', fontSize: 'clamp(21px,4vw,38px)', lineHeight: 1.2, fontWeight: 600, margin: '22px 0 16px' },
       heroSubStyle: { ...this.reveal('heroSub', 'translateY(24px)', 0.3), color: '#e7ece9', fontSize: 18, lineHeight: 1.6, margin: '0 0 28px', maxWidth: 460 },
@@ -783,6 +1039,13 @@ class Component extends DCLogic {
       galleryItems,
       videoTestimonials,
       contactStyle: { ...this.reveal('contact', 'translateX(-24px)', 0), maxWidth: 1200, margin: '0 auto' },
+      transforms,
+      pb0Style: { ...this.reveal('pb0', 'translateY(26px)', 0.00), height: '100%' },
+      pb1Style: { ...this.reveal('pb1', 'translateY(26px)', 0.08), height: '100%' },
+      pb2Style: { ...this.reveal('pb2', 'translateY(26px)', 0.16), height: '100%' },
+      pb3Style: { ...this.reveal('pb3', 'translateY(26px)', 0.24), height: '100%' },
+      pb4Style: { ...this.reveal('pb4', 'translateY(26px)', 0.32), height: '100%' },
+      pb5Style: { ...this.reveal('pb5', 'translateY(26px)', 0.40), height: '100%' },
       faqs,
       cta2Style: { ...this.reveal('cta2', 'scale(0.96) translateY(20px)', 0), maxWidth: 1200, margin: '0 auto' },
     };
